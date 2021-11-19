@@ -20,5 +20,5 @@ Book link: https://ww2615.github.io/chessgame_analysis/
 
 (You will need to repeat steps 2 and 4 every time you wish to update the book online.)
 
-### Description of the project
+
 
