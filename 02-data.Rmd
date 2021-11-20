@@ -1,2 +1,5 @@
 # Data sources
 
+The data for this project was collected from database.lichess.org.
+The project will use the October 2021 games that include 88,092,721	games played online in lichess.org.
+More about the data can be found in https://database.lichess.org/.
