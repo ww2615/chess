@@ -6,3 +6,9 @@ results
 interactive-component
 conclusion
 missing-values-plot
+chess-game-notations
+sample-pgn
+sample-fen
+choosing-the-right-data
+lichess-game-data-format
+discussion
