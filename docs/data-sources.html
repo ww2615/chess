@@ -24,7 +24,7 @@
 <meta name="author" content="Ju Hyun Jeon Freddy Wong" />
 
 
-<meta name="date" content="2021-11-19" />
+<meta name="date" content="2021-11-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -74,9 +74,18 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a></li>
+<li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="data-sources.html"><a href="data-sources.html#chess-game-notations"><i class="fa fa-check"></i><b>2.1</b> Chess game notations</a></li>
+<li class="chapter" data-level="2.2" data-path="data-sources.html"><a href="data-sources.html#choosing-the-right-data"><i class="fa fa-check"></i><b>2.2</b> Choosing the right data</a></li>
+<li class="chapter" data-level="2.3" data-path="data-sources.html"><a href="data-sources.html#lichess-game-data-format"><i class="fa fa-check"></i><b>2.3</b> Lichess game data format</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a></li>
-<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a></li>
+<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="missing-values.html"><a href="missing-values.html#missing-values-plot"><i class="fa fa-check"></i><b>4.1</b> missing values plot</a></li>
+<li class="chapter" data-level="4.2" data-path="missing-values.html"><a href="missing-values.html#discussion"><i class="fa fa-check"></i><b>4.2</b> Discussion</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a></li>
 <li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a></li>
 <li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a></li>
@@ -101,7 +110,70 @@
             <section class="normal" id="section-">
 <div id="data-sources" class="section level1" number="2">
 <h1><span class="header-section-number">Chapter 2</span> Data sources</h1>
+<div id="chess-game-notations" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Chess game notations</h2>
+<p>Chess positions can be stored in one of two formats: <strong>PGN</strong>s or <strong>FEN</strong>s. PGN (Portable Game Format) is often used when people write down moves from the start of the game. PGN can also include data such as event names, players, ELO, and results. FEN (Forsyth-Edwards Notation) is a simplified shorter notation that can describe one position. FEN has the disadvantage of not being able to encode data outside of chess position such as move order, player names, ELO, and results. In this project, we will be following chess games from the start of the game thus will be using the PGN format as the base format.</p>
+<p>The following encode the same chess game or chess position.
+<a href="images/sample.PNG">Sample Position</a></p>
+<div id="sample-pgn" class="section level4" number="2.1.0.1">
+<h4><span class="header-section-number">2.1.0.1</span> - Sample PGN</h4>
+<p>[Event “EDAV chess tournament”]</p>
+<p>[Site “Columbia University, NYC”]</p>
+<p>[Date “December 1st”]</p>
+<p>[Round “1”]</p>
+<p>[White “student A”]</p>
+<p>[Black “student B”]</p>
+<p>[Result “1-0”]</p>
+<ol style="list-style-type: decimal">
+<li>e4 1…e5 2.Nf3 2…Nc6 1-0</li>
+</ol>
+</div>
+<div id="sample-fen" class="section level4" number="2.1.0.2">
+<h4><span class="header-section-number">2.1.0.2</span> - Sample FEN</h4>
+<p>r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3</p>
+</div>
+</div>
+<div id="choosing-the-right-data" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Choosing the right data</h2>
+<p>There are many online data sets that include chess PGN.
+For instance, CRAN Project <a href="https://cran.r-project.org/web/packages/rchess/index.html">RChess</a> has its data set <strong>chesswc</strong> which is a collection of chess games from the FIDE World Cup 2011, 2013, and 2015.</p>
+<p>However, for the purpose of our project, there were a specific set of requirements that had to be sufficed:</p>
+<ol style="list-style-type: decimal">
+<li><p>Sufficient <strong>amount</strong> of chess games</p></li>
+<li><p><strong>Evaluation</strong> of every move</p></li>
+<li><p><strong>Clock</strong> after every move</p></li>
+</ol>
+<p>The First requirement is relatively simple to achieve. However, very few chess data sets include computer evaluation and clock time in their PGNs. The second and third requirements are not part of the original PGN notation making it the limiting factor for our choice of data set.</p>
+<p>We decided to use the data from <a href="https://database.lichess.org/">lichess database</a>. The project decided to use the October 2021 games that included 88,092,721 games played online in lichess.org. Some of the games in the database encoded evaluation and clock time after every move.</p>
+</div>
+<div id="lichess-game-data-format" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Lichess game data format</h2>
+<p>Not all games from the database is guaranteed to have [%clk] or [%eval] which are the clock time and evaluation of the position. According to the lichess database, around 6% of the games are annotated with evaluation.
+The following is a sample PGN format Lichess uses</p>
+<hr />
+<p>[Event “Rated Bullet game”]</p>
+<p>[Site “<a href="https://lichess.org/NRafdioG" class="uri">https://lichess.org/NRafdioG</a>”]</p>
+<p>[Date “2021.10.01”]</p>
+<p>[Round “-”]</p>
+<p>[White “xtzdavi182”]</p>
+<p>[Black “al_fatih”]</p>
+<p>[Result “1-0”]</p>
+<p>[UTCDate “2021.10.01”]</p>
+<p>[UTCTime “00:00:14”]</p>
+<p>[WhiteElo “1703”]</p>
+<p>[BlackElo “1698”]</p>
+<p>[WhiteRatingDiff “+6”]</p>
+<p>[BlackRatingDiff “-6”]</p>
+<p>[ECO “B50”]</p>
+<p>[Opening “Sicilian Defense: Modern Variations”]</p>
+<p>[TimeControl “60+0”]</p>
+<p>[Termination “Time forfeit”]</p>
+<ol style="list-style-type: decimal">
+<li>e4 { [%clk 0:01:00] } 1… c5 { [%clk 0:01:00] } 2. Nf3 { [%clk 0:01:00] } 2… d6 { [%clk 0:00:59] } 3. b3 { [%clk 0:01:00] } 3… Nc6 { [%clk 0:00:58] } 4. Bb2 { [%clk 0:01:00] } 4… Nf6 { [%clk 0:00:58] } 5. Bb5 { [%clk 0:00:59] } 5… Bd7 { [%clk 0:00:56] } 6. O-O { [%clk 0:00:59] } 6… a6 { [%clk 0:00:55] } 7. Bxc6 { [%clk 0:00:58] } 7… Bxc6 { [%clk 0:00:55] } 8. Re1 { [%clk 0:00:58] } 8… g6 { [%clk 0:00:55] } 9. h3 { [%clk 0:00:58] } 9… Bg7 { [%clk 0:00:54] } 10. d3 { [%clk 0:00:57] } 10… O-O { [%clk 0:00:53] } 11. Nbd2 { [%clk 0:00:57] } 11… b5 { [%clk 0:00:51] } 12. Rb1 { [%clk 0:00:57] } 12… Re8 { [%clk 0:00:51] } 13. c4 { [%clk 0:00:57] } 13… b4 { [%clk 0:00:49] } 14. a3 { [%clk 0:00:56] } 14… a5 { [%clk 0:00:47] } 15. axb4 { [%clk 0:00:55] } 15… cxb4 { [%clk 0:00:47] } 16. Ra1 { [%clk 0:00:55] } 16… Qb6 { [%clk 0:00:45] } 17. Bd4 { [%clk 0:00:53] } 17… Qc7 { [%clk 0:00:43] } 18. e5 { [%clk 0:00:51] } 18… dxe5 { [%clk 0:00:42] } 19. Nxe5 { [%clk 0:00:51] } 19… Bb7 { [%clk 0:00:39] } 20. Qc2 { [%clk 0:00:44] } 20… Rad8 { [%clk 0:00:38] } 21. Be3 { [%clk 0:00:42] } 21… Nd5 { [%clk 0:00:31] } 22. Nef3 { [%clk 0:00:40] } 22… Nxe3 { [%clk 0:00:29] } 23. Rxe3 { [%clk 0:00:40] } 23… Qd6 { [%clk 0:00:25] } 24. Rae1 { [%clk 0:00:39] } 24… e6 { [%clk 0:00:23] } 25. d4 { [%clk 0:00:38] } 25… Bxf3 { [%clk 0:00:18] } 26. Nxf3 { [%clk 0:00:37] } 26… Rc8 { [%clk 0:00:14] } 27. c5 { [%clk 0:00:34] } 27… Qd5 { [%clk 0:00:11] } 28. Rd3 { [%clk 0:00:32] } 28… Red8 { [%clk 0:00:10] } 29. Re5 { [%clk 0:00:31] } 29… Qc6 { [%clk 0:00:07] } 30. Ree3 { [%clk 0:00:29] } 30… Qb5 { [%clk 0:00:06] } 31. Qe2 { [%clk 0:00:27] } 31… Rc7 { [%clk 0:00:04] } 32. Rxe6 { [%clk 0:00:26] } 32… fxe6 { [%clk 0:00:03] } 33. Qxe6+ { [%clk 0:00:26] } 1-0</li>
+</ol>
+<hr />
 
+</div>
 </div>
             </section>
 
