@@ -76,7 +76,12 @@
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="data-sources.html"><a href="data-sources.html#chess-game-notations"><i class="fa fa-check"></i><b>2.1</b> Chess game notations</a></li>
+<li class="chapter" data-level="2.1" data-path="data-sources.html"><a href="data-sources.html#chess-game-notations"><i class="fa fa-check"></i><b>2.1</b> Chess game notations</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="data-sources.html"><a href="data-sources.html#image-of-the-position"><i class="fa fa-check"></i><b>2.1.1</b> Image of the position</a></li>
+<li class="chapter" data-level="2.1.2" data-path="data-sources.html"><a href="data-sources.html#sample-pgn"><i class="fa fa-check"></i><b>2.1.2</b> - Sample PGN</a></li>
+<li class="chapter" data-level="2.1.3" data-path="data-sources.html"><a href="data-sources.html#sample-fen"><i class="fa fa-check"></i><b>2.1.3</b> - Sample FEN</a></li>
+</ul></li>
 <li class="chapter" data-level="2.2" data-path="data-sources.html"><a href="data-sources.html#choosing-the-right-data"><i class="fa fa-check"></i><b>2.2</b> Choosing the right data</a></li>
 <li class="chapter" data-level="2.3" data-path="data-sources.html"><a href="data-sources.html#lichess-game-data-format"><i class="fa fa-check"></i><b>2.3</b> Lichess game data format</a></li>
 </ul></li>
@@ -113,10 +118,16 @@
 <div id="chess-game-notations" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Chess game notations</h2>
 <p>Chess positions can be stored in one of two formats: <strong>PGN</strong>s or <strong>FEN</strong>s. PGN (Portable Game Format) is often used when people write down moves from the start of the game. PGN can also include data such as event names, players, ELO, and results. FEN (Forsyth-Edwards Notation) is a simplified shorter notation that can describe one position. FEN has the disadvantage of not being able to encode data outside of chess position such as move order, player names, ELO, and results. In this project, we will be following chess games from the start of the game thus will be using the PGN format as the base format.</p>
-<p>The following encode the same chess game or chess position.
-<a href="images/sample.PNG">Sample Position</a></p>
-<div id="sample-pgn" class="section level4" number="2.1.0.1">
-<h4><span class="header-section-number">2.1.0.1</span> - Sample PGN</h4>
+<p>The following encode the same chess game or chess position.</p>
+<div id="image-of-the-position" class="section level3" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Image of the position</h3>
+<div class="figure">
+<img src="images/sample.PNG" alt="" />
+<p class="caption">Sample Position</p>
+</div>
+</div>
+<div id="sample-pgn" class="section level3" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> - Sample PGN</h3>
 <p>[Event “EDAV chess tournament”]</p>
 <p>[Site “Columbia University, NYC”]</p>
 <p>[Date “December 1st”]</p>
@@ -128,8 +139,8 @@
 <li>e4 1…e5 2.Nf3 2…Nc6 1-0</li>
 </ol>
 </div>
-<div id="sample-fen" class="section level4" number="2.1.0.2">
-<h4><span class="header-section-number">2.1.0.2</span> - Sample FEN</h4>
+<div id="sample-fen" class="section level3" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> - Sample FEN</h3>
 <p>r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3</p>
 </div>
 </div>
