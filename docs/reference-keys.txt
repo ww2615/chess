@@ -12,3 +12,4 @@ sample-fen
 choosing-the-right-data
 lichess-game-data-format
 discussion
+image-of-the-position

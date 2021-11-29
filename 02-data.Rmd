@@ -5,9 +5,12 @@
 Chess positions can be stored in one of two formats: **PGN**s or **FEN**s. PGN (Portable Game Format) is often used when people write down moves from the start of the game. PGN can also include data such as event names, players, ELO, and results. FEN (Forsyth-Edwards Notation) is a simplified shorter notation that can describe one position. FEN has the disadvantage of not being able to encode data outside of chess position such as move order, player names, ELO, and results. In this project, we will be following chess games from the start of the game thus will be using the PGN format as the base format.
 
 The following encode the same chess game or chess position.
-[Sample Position](images/sample.PNG)
 
-#### - Sample PGN
+### Image of the position
+
+![Sample Position](images/sample.PNG)
+
+### - Sample PGN
 
 [Event "EDAV chess tournament"]
 
@@ -25,7 +28,7 @@ The following encode the same chess game or chess position.
 
 1. e4 1...e5 2.Nf3 2...Nc6 1-0
 
-#### - Sample FEN
+### - Sample FEN
 
 r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3
 
