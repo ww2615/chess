@@ -24,7 +24,7 @@
 <meta name="author" content="Ju Hyun Jeon Freddy Wong" />
 
 
-<meta name="date" content="2021-11-29" />
+<meta name="date" content="2021-11-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -130,7 +130,7 @@
 <li>How much games were annotated?</li>
 </ul>
 <p>The answer to the first question will be answered in the next chapter.
-From the data, we deduced that 7,142,630 / 88,092,721 = <strong>8.1</strong> % of the games were annotated compared to the <strong>6</strong> % claimed on the <a href="https://database.lichess.org/#standard_games">website</a>.</p>
+From the data, we deduced that 7,142,630 / 88,092,721 = <strong>8.1 %</strong> of the games were annotated compared to the <strong>6 %</strong> claimed on the <a href="https://database.lichess.org/#standard_games">website</a>.</p>
 </div>
 <div id="formatting-the-raw-data" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Formatting the Raw Data</h2>
@@ -142,6 +142,14 @@ From the data, we deduced that 7,142,630 / 88,092,721 = <strong>8.1</strong> % o
 <p>The formatting process intended to change <strong>each row</strong> to <strong>moves</strong> instead of <strong>games</strong>.</p>
 <p>Each <strong>move</strong> was associated with Result<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a>, WhiteElo<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>, BlackElo<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a>, ECO<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a>, TimeControl<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a>, Termination<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a>, Color<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a>, MoveNum<a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a>, Move<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a>, Type<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>, Eval<a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a>, EvalDiff<a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a>, Time<a href="#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a>, TimeSpent<a href="#fn25" class="footnote-ref" id="fnref25"><sup>25</sup></a>.</p>
 <p>The missing data of this csv data set will be examined in the next chapter.</p>
+<p>464,436,334 annotated moves have been played but this dataset was impossible to work with.</p>
+<div class="figure">
+<img src="images/timecontrol.PNG" alt="" />
+<p class="caption">Time Control Distribution</p>
+</div>
+<p>We decided to focus on the most popular time control format <strong>600 + 0</strong> or 10 minutes with no increment.</p>
+<p>This time format is <strong>16.91 %</strong> of all games.</p>
+<p>By choosing this time format, we were able to conduct a deeper analysis on the relationship between time and bad moves.</p>
 
 </div>
 </div>
