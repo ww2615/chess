@@ -123,12 +123,9 @@ for r in csv_reader:
         if(line_count % 5000000 == 0):
             fileindex += 1
             moves.close()
-            if(fileindex == 3):
-                break
             d = 'moves_' + str(fileindex) + '.csv'
             moves = open(d, mode = 'a+', newline = '')
             csv_writer = csv.writer(moves, delimiter = ',')
             csv_writer.writerow(header)
-        if(fileindex == 3):
-            break
+
     # intended to test results.

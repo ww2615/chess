@@ -12,3 +12,6 @@ However, these two columns will not affect any of our analysis since the change 
 As a result, the data set itself was complete and created no hardships.
 
 
+![Missing Data Plot for moves.csv](images/moves_missing_data.PNG)
+
+![Missing Data Plot for 600.csv](images/missing_data_600.PNG)

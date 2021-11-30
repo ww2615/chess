@@ -36,6 +36,15 @@ Each **move** was associated with Result[^1], WhiteElo[^4], BlackElo[^5], ECO[^8
 
 The missing data of this csv data set will be examined in the next chapter.
 
+464,436,334 annotated moves have been played but this dataset was impossible to work with. 
+
+<img src="images/timecontrol.PNG" alt="Time Control Distribution" width="500"/>
+
+We decided to focus on the most popular time control format 600 + 0 or 10 minutes with no increment.
+
+By choosing this time format, we were able to conduct a deeper analysis on the relationship between time and bad moves.
+
+
 
 
 [^1]: Result of the game.
