@@ -13,3 +13,6 @@ choosing-the-right-data
 lichess-game-data-format
 discussion
 image-of-the-position
+raw-data-transformation
+understanding-the-raw-data
+formatting-the-raw-data
