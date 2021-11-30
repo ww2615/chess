@@ -14,7 +14,7 @@ This "data_index.csv" was only generated to answer the following questions.
 - How much games were annotated?
 
 The answer to the first question will be answered in the next chapter.
-From the data, we deduced that 7,142,630 / 88,092,721 = **8.1** % of the games were annotated compared to the **6** % claimed on the [website](https://database.lichess.org/#standard_games).
+From the data, we deduced that 7,142,630 / 88,092,721 = **8.1 %** of the games were annotated compared to the **6 %** claimed on the [website](https://database.lichess.org/#standard_games).
 
 ## Formatting the Raw Data
 
@@ -38,9 +38,11 @@ The missing data of this csv data set will be examined in the next chapter.
 
 464,436,334 annotated moves have been played but this dataset was impossible to work with. 
 
-<img src="images/timecontrol.PNG" alt="Time Control Distribution" width="500"/>
+![Time Control Distribution](images/timecontrol.PNG)
 
-We decided to focus on the most popular time control format 600 + 0 or 10 minutes with no increment.
+We decided to focus on the most popular time control format **600 + 0** or 10 minutes with no increment.
+
+This time format is **16.91 %** of all games.
 
 By choosing this time format, we were able to conduct a deeper analysis on the relationship between time and bad moves.
 
