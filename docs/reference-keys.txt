@@ -16,3 +16,6 @@ image-of-the-position
 raw-data-transformation
 understanding-the-raw-data
 formatting-the-raw-data
+background
+specific-library-used
+rchess
