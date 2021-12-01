@@ -16,3 +16,7 @@ image-of-the-position
 raw-data-transformation
 understanding-the-raw-data
 formatting-the-raw-data
+missing-data
+moves-data
+data
+e4-clk-00100-1-c5-clk-00100-2.-nf3-clk-00100-2-d6-clk-00059-3.-b3-clk-00100-3-nc6-clk-00058-4.-bb2-clk-00100-4-nf6-clk-00058-5.-bb5-clk-00059-5-bd7-clk-00056-6.-o-o-clk-00059-6-a6-clk-00055-7.-bxc6-clk-00058-7-bxc6-clk-00055-8.-re1-clk-00058-8-g6-clk-00055-9.-h3-clk-00058-9-bg7-clk-00054-10.-d3-clk-00057-10-o-o-clk-00053-11.-nbd2-clk-00057-11-b5-clk-00051-12.-rb1-clk-00057-12-re8-clk-00051-13.-c4-clk-00057-13-b4-clk-00049-14.-a3-clk-00056-14-a5-clk-00047-15.-axb4-clk-00055-15-cxb4-clk-00047-16.-ra1-clk-00055-16-qb6-clk-00045-17.-bd4-clk-00053-17-qc7-clk-00043-18.-e5-clk-00051-18-dxe5-clk-00042-19.-nxe5-clk-00051-19-bb7-clk-00039-20.-qc2-clk-00044-20-rad8-clk-00038-21.-be3-clk-00042-21-nd5-clk-00031-22.-nef3-clk-00040-22-nxe3-clk-00029-23.-rxe3-clk-00040-23-qd6-clk-00025-24.-rae1-clk-00039-24-e6-clk-00023-25.-d4-clk-00038-25-bxf3-clk-00018-26.-nxf3-clk-00037-26-rc8-clk-00014-27.-c5-clk-00034-27-qd5-clk-00011-28.-rd3-clk-00032-28-red8-clk-00010-29.-re5-clk-00031-29-qc6-clk-00007-30.-ree3-clk-00029-30-qb5-clk-00006-31.-qe2-clk-00027-31-rc7-clk-00004-32.-rxe6-clk-00026-32-fxe6-clk-00003-33.-qxe6-clk-00026-1-0
