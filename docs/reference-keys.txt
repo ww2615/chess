@@ -1,12 +1,5 @@
 introduction
-background
-specific-library-used
-rchess
-specific-libraries-used
 data-sources
-missing-data
-moves-data
-data
 data-transformation
 missing-values
 results
@@ -23,3 +16,7 @@ image-of-the-position
 raw-data-transformation
 understanding-the-raw-data
 formatting-the-raw-data
+background
+specific-library-used
+rchess
+specific-libraries-used

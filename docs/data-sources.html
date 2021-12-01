@@ -24,7 +24,7 @@
 <meta name="author" content="Ju Hyun Jeon Freddy Wong" />
 
 
-<meta name="date" content="2021-11-30" />
+<meta name="date" content="2021-11-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -83,19 +83,12 @@
 <li class="chapter" data-level="2.1.3" data-path="data-sources.html"><a href="data-sources.html#sample-fen"><i class="fa fa-check"></i><b>2.1.3</b> - Sample FEN</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="data-sources.html"><a href="data-sources.html#choosing-the-right-data"><i class="fa fa-check"></i><b>2.2</b> Choosing the right data</a></li>
-<li class="chapter" data-level="2.3" data-path="data-sources.html"><a href="data-sources.html#lichess-game-data-format"><i class="fa fa-check"></i><b>2.3</b> Lichess Game Data Format</a></li>
-<li class="chapter" data-level="2.4" data-path="data-sources.html"><a href="data-sources.html#missing-data"><i class="fa fa-check"></i><b>2.4</b> Missing Data</a></li>
-<li class="chapter" data-level="2.5" data-path="data-sources.html"><a href="data-sources.html#moves-data"><i class="fa fa-check"></i><b>2.5</b> Moves Data</a></li>
-<li class="chapter" data-level="2.6" data-path="data-sources.html"><a href="data-sources.html#data"><i class="fa fa-check"></i><b>2.6</b> 600+0 Data</a></li>
+<li class="chapter" data-level="2.3" data-path="data-sources.html"><a href="data-sources.html#lichess-game-data-format"><i class="fa fa-check"></i><b>2.3</b> Lichess game data format</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="data-transformation.html"><a href="data-transformation.html#understanding-the-raw-data"><i class="fa fa-check"></i><b>3.1</b> Understanding the Raw Data</a></li>
-<li class="chapter" data-level="3.2" data-path="data-transformation.html"><a href="data-transformation.html#formatting-the-raw-data"><i class="fa fa-check"></i><b>3.2</b> Formatting the Raw Data</a></li>
-</ul></li>
+<li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a></li>
 <li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="missing-values.html"><a href="missing-values.html#missing-values-plot"><i class="fa fa-check"></i><b>4.1</b> Missing Values Plot</a></li>
+<li class="chapter" data-level="4.1" data-path="missing-values.html"><a href="missing-values.html#missing-values-plot"><i class="fa fa-check"></i><b>4.1</b> missing values plot</a></li>
 <li class="chapter" data-level="4.2" data-path="missing-values.html"><a href="missing-values.html#discussion"><i class="fa fa-check"></i><b>4.2</b> Discussion</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a></li>
@@ -165,14 +158,9 @@ For instance, CRAN Project <a href="https://cran.r-project.org/web/packages/rche
 <p>We decided to use the data from <a href="https://database.lichess.org/">lichess database</a>. The project decided to use the October 2021 games that included 88,092,721 games played online in lichess.org. Some of the games in the database encoded evaluation and clock time after every move.</p>
 </div>
 <div id="lichess-game-data-format" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> Lichess Game Data Format</h2>
-<p><strong>lichess_db_standard_rated_2021-10.pgn</strong></p>
-<p>Total 88,092,721 games.</p>
-<p>The file can be downloaded from <a href="https://database.lichess.org/">database.lichess.org</a>.
-The file is a list of PGNs without index.
-All of the following data sets are results of organizing this data.
-Not all games from the database is guaranteed to have [%clk] or [%eval] which are the clock time and the evaluation of the position. According to the Lichess database, around 6% of the games are annotated with evaluation.
-The following is a sample PGN format Lichess uses.</p>
+<h2><span class="header-section-number">2.3</span> Lichess game data format</h2>
+<p>Not all games from the database is guaranteed to have [%clk] or [%eval] which are the clock time and evaluation of the position. According to the lichess database, around 6% of the games are annotated with evaluation.
+The following is a sample PGN format Lichess uses</p>
 <hr />
 <p>[Event “Rated Bullet game”]</p>
 <p>[Site “<a href="https://lichess.org/NRafdioG" class="uri">https://lichess.org/NRafdioG</a>”]</p>
@@ -195,155 +183,6 @@ The following is a sample PGN format Lichess uses.</p>
 <li>e4 { [%clk 0:01:00] } 1… c5 { [%clk 0:01:00] } 2. Nf3 { [%clk 0:01:00] } 2… d6 { [%clk 0:00:59] } 3. b3 { [%clk 0:01:00] } 3… Nc6 { [%clk 0:00:58] } 4. Bb2 { [%clk 0:01:00] } 4… Nf6 { [%clk 0:00:58] } 5. Bb5 { [%clk 0:00:59] } 5… Bd7 { [%clk 0:00:56] } 6. O-O { [%clk 0:00:59] } 6… a6 { [%clk 0:00:55] } 7. Bxc6 { [%clk 0:00:58] } 7… Bxc6 { [%clk 0:00:55] } 8. Re1 { [%clk 0:00:58] } 8… g6 { [%clk 0:00:55] } 9. h3 { [%clk 0:00:58] } 9… Bg7 { [%clk 0:00:54] } 10. d3 { [%clk 0:00:57] } 10… O-O { [%clk 0:00:53] } 11. Nbd2 { [%clk 0:00:57] } 11… b5 { [%clk 0:00:51] } 12. Rb1 { [%clk 0:00:57] } 12… Re8 { [%clk 0:00:51] } 13. c4 { [%clk 0:00:57] } 13… b4 { [%clk 0:00:49] } 14. a3 { [%clk 0:00:56] } 14… a5 { [%clk 0:00:47] } 15. axb4 { [%clk 0:00:55] } 15… cxb4 { [%clk 0:00:47] } 16. Ra1 { [%clk 0:00:55] } 16… Qb6 { [%clk 0:00:45] } 17. Bd4 { [%clk 0:00:53] } 17… Qc7 { [%clk 0:00:43] } 18. e5 { [%clk 0:00:51] } 18… dxe5 { [%clk 0:00:42] } 19. Nxe5 { [%clk 0:00:51] } 19… Bb7 { [%clk 0:00:39] } 20. Qc2 { [%clk 0:00:44] } 20… Rad8 { [%clk 0:00:38] } 21. Be3 { [%clk 0:00:42] } 21… Nd5 { [%clk 0:00:31] } 22. Nef3 { [%clk 0:00:40] } 22… Nxe3 { [%clk 0:00:29] } 23. Rxe3 { [%clk 0:00:40] } 23… Qd6 { [%clk 0:00:25] } 24. Rae1 { [%clk 0:00:39] } 24… e6 { [%clk 0:00:23] } 25. d4 { [%clk 0:00:38] } 25… Bxf3 { [%clk 0:00:18] } 26. Nxf3 { [%clk 0:00:37] } 26… Rc8 { [%clk 0:00:14] } 27. c5 { [%clk 0:00:34] } 27… Qd5 { [%clk 0:00:11] } 28. Rd3 { [%clk 0:00:32] } 28… Red8 { [%clk 0:00:10] } 29. Re5 { [%clk 0:00:31] } 29… Qc6 { [%clk 0:00:07] } 30. Ree3 { [%clk 0:00:29] } 30… Qb5 { [%clk 0:00:06] } 31. Qe2 { [%clk 0:00:27] } 31… Rc7 { [%clk 0:00:04] } 32. Rxe6 { [%clk 0:00:26] } 32… fxe6 { [%clk 0:00:03] } 33. Qxe6+ { [%clk 0:00:26] } 1-0</li>
 </ol>
 <hr />
-</div>
-<div id="missing-data" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Missing Data</h2>
-<p><strong>data_index.csv</strong> index from <strong>1 - 9</strong></p>
-<p>10,000,000 lines per csv. Total 88,092,721 lines.</p>
-<p>The data_index.csv was created to understand which data was missing in the original data.
-The columns of the data was constructed as following.</p>
-<table>
-<colgroup>
-<col width="21%" />
-<col width="78%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Column Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Result</td>
-<td>Result of the game (chr) ex) 1-0</td>
-</tr>
-<tr class="even">
-<td>UTCDate</td>
-<td>UTC date of the game (chr) ex) 2021.10.01</td>
-</tr>
-<tr class="odd">
-<td>UTCTime</td>
-<td>UTC time of the game (num) ex) 00:00:14</td>
-</tr>
-<tr class="even">
-<td>WhiteElo</td>
-<td>White player’s Elo in Lichess (num)</td>
-</tr>
-<tr class="odd">
-<td>BlackElo</td>
-<td>Black player’s Elo in Lichess (num)</td>
-</tr>
-<tr class="even">
-<td>WhiteRatingDiff</td>
-<td>Change in White player’s Elo after the game (num)</td>
-</tr>
-<tr class="odd">
-<td>BlackRatingDiff</td>
-<td>Change in Black player’s Elo after the game (num)</td>
-</tr>
-<tr class="even">
-<td>ECO</td>
-<td>Encyclopedia of Chess Openings. The Opening that was played in the game (chr) ex) B50</td>
-</tr>
-<tr class="odd">
-<td>TimeControl</td>
-<td>The time format in which the game was played. (chr) ex) 10 minutes + 5 second increment = “600+5”</td>
-</tr>
-<tr class="even">
-<td>Termination</td>
-<td>How the game ended (chr) ex) Normal(checkmate or resignation), Abandoned(player left the game), Time Forfeit (player ran out of time)</td>
-</tr>
-<tr class="odd">
-<td>Evaluation</td>
-<td>Whether or not the game was annotated (chr) ex) Yes, No</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="moves-data" class="section level2" number="2.5">
-<h2><span class="header-section-number">2.5</span> Moves Data</h2>
-<p><strong>moves_index.csv</strong> index from <strong>1 - 93</strong></p>
-<p>5,000,000 lines per csv. Total 464,436,334 lines.</p>
-<p>The moves_index.csv was created to format the data move by move.
-The columns of the data was constructed as following.</p>
-<table>
-<colgroup>
-<col width="21%" />
-<col width="78%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Column Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Result</td>
-<td>Result of the game (chr) ex) 1-0</td>
-</tr>
-<tr class="even">
-<td>WhiteElo</td>
-<td>White player’s Elo in Lichess (num)</td>
-</tr>
-<tr class="odd">
-<td>BlackElo</td>
-<td>Black player’s Elo in Lichess (num)</td>
-</tr>
-<tr class="even">
-<td>ECO</td>
-<td>Encyclopedia of Chess Openings. The Opening that was played in the game (chr) ex) B50</td>
-</tr>
-<tr class="odd">
-<td>TimeControl</td>
-<td>The time format in which the game was played. (chr) ex) 10 minutes + 5 second increment = “600+5”</td>
-</tr>
-<tr class="even">
-<td>Termination</td>
-<td>How the game ended (chr) ex) Normal(checkmate or resignation), Abandoned(player left the game), Time Forfeit (player ran out of time)</td>
-</tr>
-<tr class="odd">
-<td>Color</td>
-<td>The color of the player that made the move (chr) ex) w or b</td>
-</tr>
-<tr class="even">
-<td>MoveNum</td>
-<td>The number of the move (num)</td>
-</tr>
-<tr class="odd">
-<td>Move</td>
-<td>The algebraic notation of the move made (chr) ex) Qh4</td>
-</tr>
-<tr class="even">
-<td>Type</td>
-<td>One of the seven types of move: blunder, mistake, dubious, normal, interesting, good, and brilliant (chr)</td>
-</tr>
-<tr class="odd">
-<td>Eval</td>
-<td>Computer evaluation after the move (chr) ex) 0.07 or #2(mate in 2 for white)</td>
-</tr>
-<tr class="even">
-<td>EvalDiff</td>
-<td>The change in evaluation. It is 0 when the previous or current evaluation was forced mate (#number) (num)</td>
-</tr>
-<tr class="odd">
-<td>Time</td>
-<td>Time left for the player (num) ex) 0:01:50</td>
-</tr>
-<tr class="even">
-<td>TimeSpent</td>
-<td>Time spent on the move (num) ex) 0:00:02</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="data" class="section level2" number="2.6">
-<h2><span class="header-section-number">2.6</span> 600+0 Data</h2>
-<p><strong>600+0_index.csv</strong> index from <strong>1 - 16</strong>
-5,000,000 lines per csv. Total 78,867,621 lines.</p>
-<p>The 600+0_index.csv was created to work with a manageable size of data.
-The columns of the data was identical to moves_index.csv.</p>
 
 </div>
 </div>
