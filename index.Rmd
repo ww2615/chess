@@ -14,6 +14,16 @@ Chess is one of the most popular games in the world which could be dated back to
 
 While the rules for chess is simple and easy to learn, it is all about thinking and strategy. The number of ways to play go exponential after each move. 400 possible setup exist after one move by each player and there are 197742 possible game after the second round of move. The possible number of game goes up to 121 million after the three pair of moves which is why it is always a popular topic for ai research company. For this project, we took advantage of the open database of Lichess.org that provides up to 1 billion games of data per month to analyze and discover insightful takeaways for future researchers on this topic. 
 
+## Introductory Chess Knowledge
+
+As most chess games do, online chess is also played in a specific time format. You are givena  specific amount of time and have to make moves within that time. If your time reaches 0, you immediately lose. Time formats are usually notated in the form **"a + b"** where **a** is the **time you start with** and **b** is the **time you get after every move** also called **increment**.  
+
+There are also classification for chess moves. In this project, we will be mostly dealing with bad moves which classify into 3 categories, **dubious**, **mistake**, and **blunder**. **Dubious moves** are objectively bad but possibly have some merits. **Mistakes** are bad moves that should not have been played. **Blunders** are bad mistakes that end up in a loss of material or in a mating sequence. 
+
+Dubious Move|Mistake|Blunder
+:-------------------------:|:-------------------------:|:-------------------------:
+![](images/dubious.PNG)|![](images/mistake.PNG)|![](images/blunder.PNG)
+
 ## Specific Libraries Used
 
 ### Rchess

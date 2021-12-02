@@ -1,5 +1,6 @@
 introduction
 background
+introductory-chess-knowledge
 specific-libraries-used
 rchess
 data-sources
@@ -17,8 +18,8 @@ understanding-the-raw-data
 formatting-the-raw-data
 focusing-on-6000-data
 missing-values
-missing-values-plot
-discussion
+missing-values-from-original-data
+missing-values-of-generated-data
 results
 interactive-component
 conclusion
