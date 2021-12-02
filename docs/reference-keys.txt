@@ -15,7 +15,7 @@ data
 data-transformation
 understanding-the-raw-data
 formatting-the-raw-data
-is-6000-a-good-representative-sample
+focusing-on-6000-data
 missing-values
 missing-values-plot
 discussion

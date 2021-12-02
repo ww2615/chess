@@ -2,7 +2,7 @@
 
 ## Understanding the Raw Data
 
-The raw data was in a zipped format of .pgn.bz2. The unzipped .pgn file was then converted through [read.py](https://github.com/ww2615/chessgame_analysis/blob/main/code/read.py).
+The raw data was in a zipped format of .pgn.bz2. The unzipped .pgn file was then converted through [read.py](code/read.py).
 
 The result of this transformation was named "data_index.csv" each constituting of 10,000,000 lines. Naturally, there were 9 files since the total count of games in the original data was 88,092,721.
 
@@ -20,13 +20,13 @@ From the data, we deduced that 7,142,630 / 88,092,721 = **8.1 %** of the games w
 
 We decided to focus on the **7,142,630** games that were annotated.
 
-The first formatting process was done using [eval.py](https://github.com/ww2615/chessgame_analysis/blob/main/code/eval.py).
+The first formatting process was done using [eval.py](code/eval.py).
 
 This process was different from the read.py that the resulting csv(pgn_index.csv) from eval.py contained the PGN descriptions of every game played.
 
 This process was conducted to generate a working **csv dataset** independent from the original data set.
 
-The second formatting process used [edit.py](https://github.com/ww2615/chessgame_analysis/blob/main/code/edit.py).
+The second formatting process used [edit.py](code/edit.py).
 
 The formatting process intended to change **each row** to **moves** instead of **games**.
 
@@ -39,7 +39,7 @@ We decided to focus on the most popular time control format **600 + 0** or 10 mi
 
 This time format is **16.91 %** of all games.
 
-The [timecount.csv] (https://github.com/ww2615/chessgame_analysis/blob/main/data/timecount.csv) was generated through [count.py](https://github.com/ww2615/chessgame_analysis/blob/main/code/count.py).
+The [timecount.csv](data/timecount.csv) was generated through [count.py](code/count.py).
 
 
 ```{r, fig.width = 12, fig.height = 9}
@@ -64,13 +64,13 @@ options(warn = defaultW)
 By choosing this time format, we were able to conduct a deeper analysis on the relationship between time and bad moves.
 
 
-## Is 600+0 a good representative sample?
+## Focusing on 600+0 data
 
 We can run a weighted t-test and chi-square test on the Elo of players
 
 Both results show that the **mean** of both data is the same and the data are **dependent**
 
-The [elocount.csv] (https://github.com/ww2615/chessgame_analysis/blob/main/data/elocount.csv) and [elo600count.csv] (https://github.com/ww2615/chessgame_analysis/blob/main/data/elo600count.csv)  was generated through [count.py](https://github.com/ww2615/chessgame_analysis/blob/main/code/count.py).
+The [elocount.csv](data/elocount.csv) and [elo600count.csv](data/elo600count.csv)  was generated through [count.py](code/count.py).
 ```{r}
 defaultW <- getOption("warn") 
 options(warn = -1)
