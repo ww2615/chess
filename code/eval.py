@@ -1,6 +1,5 @@
 import csv
 import pandas
-from datetime import datetime
 
 clk = "%clk"
 eval = "%eval"
@@ -8,7 +7,7 @@ game_csv = open('pgn_1.csv', mode = 'w', newline = '')
 
 csv_writer = csv.writer(game_csv, delimiter = ',')
 
-keywords = ['Result', 'UTCDate', 'UTCTime', 'WhiteElo', 'BlackElo', 
+keywords = ['Result', 'UTCDate', 'UTCTime', 'WhiteElo', 'BlackElo',
             'WhiteRatingDiff', 'BlackRatingDiff', 'ECO', 'TimeControl', 'Termination', 'pgn']
 readpgn = open("E:\LichessData\lichess_db_standard_rated_2021-10.pgn")
 csv_writer.writerow(keywords)
@@ -17,12 +16,11 @@ count = 1
 filemax = 1
 fileindex = 1
 max = 88092721
-starttime = datetime.now()
 
 while(count < max):
     notcomplete = True
     line = [""] * 11
-    while(notcomplete): 
+    while(notcomplete):
         rl = readpgn.readline()
         rl = rl[1:-2]
         header = rl.split(" ", 1)[0]
@@ -49,8 +47,6 @@ while(count < max):
         csv_writer.writerow(line)
         filemax += 1
     count += 1
-    if(count%5000000 == 0):
-        print(count, datetime.now() - starttime)
     if(filemax%10000000 == 0):
         fileindex += 1
         game_csv.close()

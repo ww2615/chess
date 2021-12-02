@@ -20,11 +20,11 @@ for r in csv_reader:
     if(count == 0):
         count += 1
         continue
-    # every line will be 
+    # every line will be
     # 0         1           2           3          4               5            6
     # result    whiteelo    blackelo    opening    timecontrol     terminatiom  color
-    # 7          8       9       10      11          12      13        14  
-    # movenum    move    type    eval    evaldiff    time    timediff  thinktime    
+    # 7          8       9       10      11          12      13        14
+    # movenum    move    type    eval    evaldiff    time    timediff  thinktime
     # line = 14
     l = 14
     count += 1
@@ -42,18 +42,18 @@ for r in csv_reader:
 
     for move in move_list:
         line = [""] * l
-        
+
         eval = move.split("{")
         num = eval[0].split(" ")
         ind = 0
         if(len(num) != 3):
             ind += 1
-            
+
         black = "..." in num[ind]
         dot_index = num[ind].index(".")
         move_num = num[ind][:dot_index]
-        
-        options = ["normal", "blunder", "brilliant", "dubious", 
+
+        options = ["normal", "blunder", "brilliant", "dubious",
                    "interesting", "mistake", "good"]
         opt_ind = 0
         opt_key = num[ind + 1]
@@ -118,8 +118,6 @@ for r in csv_reader:
             prevline[i + ind] = line[i]
         csv_writer.writerow(line)
         line_count += 1
-        if(line_count % 1000000 == 0):
-            print(line_count, dt.now() - starttime)
         if(line_count % 5000000 == 0):
             fileindex += 1
             moves.close()
