@@ -1,0 +1,6 @@
+library(tidyverse)
+library(ggplot2)
+source("C:/Users/juhyu/Documents/MissingDataMultiple.R")
+plot_missing("C:/Users/juhyu/eclipse-workspace/ChessData/olderdata", "data", 9)
+plot_missing("C:/Users/juhyu/eclipse-workspace/ChessData/moves", "moves", 93)
+plot_missing("C:/Users/juhyu/eclipse-workspace/ChessData", "600+0", 16)
