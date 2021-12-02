@@ -1,5 +1,9 @@
 import csv
-from datetime import datetime as dt
+
+# This File requires pgn_1.csv
+# It returns two files with two distributions
+# elocount.csv with bins 0-100, 100-200, ... , 3400-3500 and the count
+# timecount.csv with every time format played and the count
 
 readpgn = open("pgn_1.csv", mode = "r")
 elocsv = open("elocount.csv", mode = "a+")
@@ -8,8 +12,6 @@ timecsv = open("timecount.csv", mode = "a+")
 reader = csv.reader(readpgn)
 elowriter = csv.writer(elocsv)
 timewriter = csv.writer(timecsv)
-
-starttime = dt.now()
 
 elo = list(range(0, 3500, 100))
 count = [0] * len(elo)
@@ -31,8 +33,6 @@ for r in reader:
         ind = timelist.index(r[8])
         timecount[ind] += 1
     line += 1
-    if(line % 100000 == 0):
-        print(line, dt.now() - starttime)
 readpgn.close()
 elowriter.writerow(elo)
 elowriter.writerow(count)

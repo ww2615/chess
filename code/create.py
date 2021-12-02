@@ -1,9 +1,8 @@
 import csv
-from datetime import datetime as dt
 
+# This file requires moves_index.csv
+# filters all moves with time format 600+0
 filemax = 93
-# move distribution
-# Eval Change
 timeformat = "600+0"
 fileindex = 1
 wr = open(timeformat +"_"+ str(fileindex) + '.csv', mode = 'a+', newline = '')
@@ -11,7 +10,6 @@ writer = csv.writer(wr, delimiter = ',')
 header = ["Result", "WhiteElo", "BlackElo", "ECO", "TimeControl", "Termination",
                      "Color", "MoveNum", "Move", "Type", "Eval", "EvalDiff", "Time", "TimeSpent"]
 writer.writerow(header)
-st = dt.now()
 line = 0
 for i in range(1, filemax + 1):
     fname = "moves/moves_" + str(i) + ".csv"
@@ -34,7 +32,5 @@ for i in range(1, filemax + 1):
             wr = open(timeformat + "_"+str(fileindex) + '.csv', mode = 'a+', newline = '')
             writer = csv.writer(wr, delimiter = ',')
             writer.writerow(header)
-        if(readerline % 1000000 == 0):
-            print(readerline, dt.now() - st)
     readf.close()
 wr.close()
