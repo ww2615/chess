@@ -145,7 +145,10 @@
 <div id="time-left-spent-by-move-type" class="section level3" number="5.1.1">
 <h3><span class="header-section-number">5.1.1</span> Time Left, Spent by Move Type</h3>
 <p>The distribution of <strong>Time Left</strong> and <strong>Time Spent</strong> by the type of moves people make.</p>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-10-1.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-10-2.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-10-3.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-10-4.png" width="672" /></p>
+<p><img src="images/Result1.PNG" />
+<img src="images/Result2.PNG" />
+<img src="images/Result3.PNG" />
+<img src="images/Result4.PNG" /></p>
 <p>This graph provides a very unique insight to the correlation.</p>
 <p>For <strong>Time Left</strong>:</p>
 <ol style="list-style-type: decimal">
@@ -169,8 +172,8 @@
 </ul></li>
 <li><p><strong>Mistakes</strong> also take more time than <strong>normal</strong> moves.</p></li>
 </ol>
-<p>This is a heatmap of Time Left - Time Spent per type of move.
-<img src="finalproj_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>This is a heatmap of Time Left - Time Spent per type of move.</p>
+<p><img src="images/Result5.PNG" /></p>
 <p>It becomes evident that people play <strong>bad</strong> moves <strong>early</strong> in the game</p>
 </div>
 <div id="time-ratio-by-move" class="section level3" number="5.1.2">
@@ -179,14 +182,12 @@
 <p>This concept of <strong>ratio</strong> is helpful in the sense that the person could have spent more time considering the position.</p>
 <p>For instance, given <strong>1 second</strong> of time left and the player makes a move in <strong>1 second</strong>, then there is less possibility that the player would have detected a better move.</p>
 <p>However, given <strong>60 second</strong> of time left and the player makes a move in <strong>1 second</strong> and <strong>blunder</strong>, this is a bad decision and probably the player should have thought more before they made the move.</p>
-<pre><code>## # A tibble: 4 x 3
-##   Type     mean   std
-##   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;
-## 1 dubious 0.142 0.130
-## 2 mistake 0.167 0.141
-## 3 blunder 0.177 0.154
-## 4 normal  0.225 0.182</code></pre>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<pre><code>##   X    Type      mean       std
+## 1 1 dubious 0.1424937 0.1303141
+## 2 2 mistake 0.1668489 0.1409064
+## 3 3 blunder 0.1771698 0.1542783
+## 4 4  normal 0.2248049 0.1818782</code></pre>
+<p><img src="images/Result6.PNG" /></p>
 <p>From this graph,</p>
 <ol style="list-style-type: decimal">
 <li><p>The mean of <strong>normal</strong> moves are much higher than other moves.</p>

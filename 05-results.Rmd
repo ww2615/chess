@@ -10,12 +10,16 @@ We can first start by considering the simple case.
 
 The distribution of **Time Left** and **Time Spent** by the type of moves people make.
 
+![](images/Result1.PNG)
+![](images/Result2.PNG)
+![](images/Result3.PNG)
+![](images/Result4.PNG)
 ```{r}
-library(tidyverse)
-library(hrbrthemes)
-library(weights)
-d = "C:/Users/juhyu/eclipse-workspace/ChessData/600+0_"
-e = ".csv"
+# library(tidyverse)
+# library(hrbrthemes)
+# library(weights)
+# d = "C:/Users/juhyu/eclipse-workspace/ChessData/600+0_"
+# e = ".csv"
 # This part of the code didn't run on bookdown
 # The same code was ran in a different r environment
 # for (i in 1:16){
@@ -37,28 +41,28 @@ e = ".csv"
 # }
 # df2 <- count(df1, Type, Time, TimeSpent)
 
-df2 <- saved
-ggplot(df2, aes(x = fct_relevel(Type, "blunder", "mistake", "normal", "dubious"), y = Time, weight = n)) + 
-  geom_boxplot() + 
-  xlab("Type") + 
-  ylab("Time Left") +
-  ylim(450, 600)
-ggplot(data = df2, aes(x = Time, weight = n, color = fct_relevel(Type, "normal", "dubious", "mistake", "blunder"))) + 
-  geom_density(size = 3) +
-  xlab("Time") +
-  labs(color = "legend")
-
-ggplot(df2, aes(x = fct_relevel(Type, "normal", "dubious", "mistake", "blunder"), y = TimeSpent, weight = n)) + 
-  geom_boxplot() + 
-  xlab("Type") + 
-  ylab("Time Spent") +
-  ylim(0, 30)
-
-ggplot(data = df2, aes(x = TimeSpent, weight = n, color = fct_relevel(Type, "normal", "dubious", "mistake", "blunder"))) + 
-  geom_density(size = 2) +
-  xlab("Time") +
-  xlim(0, 30) +
-  labs(color = "legend")
+# df2 <- saved
+# ggplot(df2, aes(x = fct_relevel(Type, "blunder", "mistake", "normal", "dubious"), y = Time, weight = n)) + 
+#   geom_boxplot() + 
+#   xlab("Type") + 
+#   ylab("Time Left") +
+#   ylim(450, 600)
+# ggplot(data = df2, aes(x = Time, weight = n, color = fct_relevel(Type, "normal", "dubious", "mistake", "blunder"))) + 
+#   geom_density(size = 3) +
+#   xlab("Time") +
+#   labs(color = "legend")
+# 
+# ggplot(df2, aes(x = fct_relevel(Type, "normal", "dubious", "mistake", "blunder"), y = TimeSpent, weight = n)) + 
+#   geom_boxplot() + 
+#   xlab("Type") + 
+#   ylab("Time Spent") +
+#   ylim(0, 30)
+# 
+# ggplot(data = df2, aes(x = TimeSpent, weight = n, color = fct_relevel(Type, "normal", "dubious", "mistake", "blunder"))) + 
+#   geom_density(size = 2) +
+#   xlab("Time") +
+#   xlim(0, 30) +
+#   labs(color = "legend")
 
 ```
 
@@ -90,16 +94,17 @@ For **Time Spent**:
 3. **Mistakes** also take more time than **normal** moves.
 
 This is a heatmap of Time Left - Time Spent per type of move.
-```{r}
-ggplot(df2, aes(x = Time, y = TimeSpent)) + 
-  stat_density_2d(aes(fill = ..density..), geom = "raster", contour = FALSE) + 
-  xlab("Time Left") +
-  ylab("Time Spent") +
-  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-        panel.background = element_blank(), axis.line = element_line(colour = "black"), strip.background = element_blank()) +
-  facet_wrap(~fct_relevel(Type, "normal", "dubious", "mistake", "blunder")) + 
-  scale_fill_gradient(low = "white", high = "black")
 
+![](images/Result5.PNG)
+```{r}
+# ggplot(df2, aes(x = Time, y = TimeSpent)) + 
+#   stat_density_2d(aes(fill = ..density..), geom = "raster", contour = FALSE) + 
+#   xlab("Time Left") +
+#   ylab("Time Spent") +
+#   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+#         panel.background = element_blank(), axis.line = element_line(colour = "black"), strip.background = element_blank()) +
+#   facet_wrap(~fct_relevel(Type, "normal", "dubious", "mistake", "blunder")) + 
+#   scale_fill_gradient(low = "white", high = "black")
 ```
 
 It becomes evident that people play **bad** moves **early** in the game
@@ -115,22 +120,24 @@ For instance, given **1 second** of time left and the player makes a move in **1
 However, given **60 second** of time left and the player makes a move in **1 second** and **blunder**, this is a bad decision and probably the player should have thought more before they made the move.
 
 ```{r}
-df2 <- mutate(df2, ratio = TimeSpent / (TimeSpent + Time))
-tb <- df2 %>%
-  group_by(Type) %>%
-  summarise(mean = mean(ratio, na.rm = TRUE), std = sd(ratio, na.rm = TRUE))
-tb <- arrange(tb, mean)
+# df2 <- mutate(df2, ratio = TimeSpent / (TimeSpent + Time))
+# tb <- df2 %>%
+#   group_by(Type) %>%
+#   summarise(mean = mean(ratio, na.rm = TRUE), std = sd(ratio, na.rm = TRUE))
+# tb <- arrange(tb, mean)
+tb <- read.csv("data/tb.csv")
 tb
-ggplot(df2, aes(x = Time, y = ratio, weight = n)) + 
-  stat_density_2d(aes(fill = ..density..), geom = "raster", contour = FALSE) + 
-  xlab("Time Left") + 
-  ylab("Time Spent / Time") + 
-  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-        panel.background = element_blank(), axis.line = element_line(colour = "black"), strip.background = element_blank()) +
-  facet_wrap(~fct_relevel(Type, "normal", "dubious", "mistake", "blunder")) + 
-  scale_fill_gradient(low = "white", high = "black")
+# ggplot(df2, aes(x = Time, y = ratio, weight = n)) + 
+#   stat_density_2d(aes(fill = ..density..), geom = "raster", contour = FALSE) + 
+#   xlab("Time Left") + 
+#   ylab("Time Spent / Time") + 
+#   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+#         panel.background = element_blank(), axis.line = element_line(colour = "black"), strip.background = element_blank()) +
+#   facet_wrap(~fct_relevel(Type, "normal", "dubious", "mistake", "blunder")) + 
+#   scale_fill_gradient(low = "white", high = "black")
 
 ```
+![](images/Result6.PNG)
 
 From this graph, 
 
