@@ -63,7 +63,20 @@ The distribution of **Time Left** and **Time Spent** by the type of moves people
 #   xlab("Time") +
 #   xlim(0, 30) +
 #   labs(color = "legend")
-
+#game1<-game%>%filter(Timet>=240&Timet<=360)
+#game2<-game%>%filter(Timet>=0&Timet<=120)
+#ggplot(data = game1, aes(x = Timet, color = fct_relevel(Type, "normal", "dubious", "mistake", "blunder"))) + 
+#   geom_density(size = 1) +
+#   xlab("Time Left") +
+#   labs(color = "legend")+
+#  geom_vline(xintercept = 300)+
+#  ggtitle("From 6 mins to 4 mins left")
+#ggplot(data = game2, aes(x = Timet, color = fct_relevel(Type, "normal", "dubious", "mistake", "blunder"))) + 
+#   geom_density(size = 1) +
+#  xlab("Time Left") +
+#  labs(color = "legend")+
+# geom_vline(xintercept = 60)+
+# ggtitle("From 2 mins to 0 mins left")
 ```
 
 This graph provides a very unique insight to the correlation.
@@ -78,7 +91,17 @@ For **Time Left**:
 
     - This may imply that **dubious moves** are part of the opening.
 
+4. When the time left reaches **5 minutes** and **1 minutes**, sudden fluctuations were found for the count of moves
 
+![](images/000063.PNG)
+![](images/000061.PNG)
+
+   - It is believed that **10 seconds**, **1 minute** and **5 minutes** acted as a psychological catalyst that urged players to make a move      
+   
+   - For both fluctuations at 5mins and 1min, we can see the curves for **normal** moves peak earlier than the other type of moves and the other moves almost peaked at the same time. However, **dubious** moves happened the most when there are 5 minutes left while **mistake** moves happened the most when there is only 1 minute left.
+   
+   - When the time left is less than 10 seconds, the distribution of the moves changed. **Normal** moves are made the most.
+   
 For **Time Spent**:
 
 1. **Normal** moves are made fast.
