@@ -226,7 +226,13 @@ From this graph,
 
 ### Time left and time ratio when the losers ran out of run
 ![](images/000123.PNG)
+
 ![](images/000125.PNG)
+
+1. It could be seen that the majority of players who won because their opponent ran out of time had suffucient time left. Most of them had more than 30 seconds left.
+
+2. Considering **time forfeit** games only, **time ratio** of the winner are mostly below 12.5%
+
 ## 
 
 ## Quality of move during low time
