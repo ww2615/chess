@@ -21,5 +21,8 @@ missing-values
 missing-values-from-original-data
 missing-values-of-generated-data
 results
+time-and-moves
+time-left-spent-by-move-type
+time-ratio-by-move
 interactive-component
 conclusion
