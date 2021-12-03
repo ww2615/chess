@@ -26,3 +26,8 @@ time-left-spent-by-move-type
 time-ratio-by-move
 interactive-component
 conclusion
+investigating-the-of-ending-of-game
+quality-of-move-during-low-time
+investigating-how-the-games-ended
+section
+time-left-and-time-ratio-when-the-losers-ran-out-of-run
