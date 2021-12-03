@@ -24,7 +24,7 @@
 <meta name="author" content="Ju Hyun Jeon Freddy Wong" />
 
 
-<meta name="date" content="2021-12-02" />
+<meta name="date" content="2021-12-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -107,7 +107,14 @@
 <li class="chapter" data-level="4.1" data-path="missing-values.html"><a href="missing-values.html#missing-values-from-original-data"><i class="fa fa-check"></i><b>4.1</b> Missing Values from Original Data</a></li>
 <li class="chapter" data-level="4.2" data-path="missing-values.html"><a href="missing-values.html#missing-values-of-generated-data"><i class="fa fa-check"></i><b>4.2</b> Missing Values of Generated Data</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a></li>
+<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#time-and-moves"><i class="fa fa-check"></i><b>5.1</b> Time and Moves</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="results.html"><a href="results.html#time-left-spent-by-move-type"><i class="fa fa-check"></i><b>5.1.1</b> Time Left, Spent by Move Type</a></li>
+<li class="chapter" data-level="5.1.2" data-path="results.html"><a href="results.html#time-ratio-by-move"><i class="fa fa-check"></i><b>5.1.2</b> Time ratio by Move</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a></li>
 <li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a></li>
 <li class="divider"></li>
@@ -131,7 +138,70 @@
             <section class="normal" id="section-">
 <div id="results" class="section level1" number="5">
 <h1><span class="header-section-number">Chapter 5</span> Results</h1>
+<div id="time-and-moves" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Time and Moves</h2>
+<p>How does time and the quality of moves correlate?</p>
+<p>We can first start by considering the simple case.</p>
+<div id="time-left-spent-by-move-type" class="section level3" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Time Left, Spent by Move Type</h3>
+<p>The distribution of <strong>Time Left</strong> and <strong>Time Spent</strong> by the type of moves people make.</p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-10-1.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-10-2.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-10-3.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-10-4.png" width="672" /></p>
+<p>This graph provides a very unique insight to the correlation.</p>
+<p>For <strong>Time Left</strong>:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Normal</strong> moves have the biggest std as expected.</p></li>
+<li><p>People have less <strong>Time Left</strong> after they make a <strong>blunder</strong> or <strong>mistake</strong></p></li>
+<li><p><strong>Dubious</strong> moves are mostly made in the first 40 second of the game.</p>
+<ul>
+<li>This may imply that <strong>dubious moves</strong> are part of the opening.</li>
+</ul></li>
+</ol>
+<p>For <strong>Time Spent</strong>:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Normal</strong> moves are made fast.</p>
+<ul>
+<li><p><strong>Normal</strong> moves may be obvious given the position</p></li>
+<li><p><strong>Normal</strong> moves may be automatically played during the opening.</p></li>
+</ul></li>
+<li><p><strong>Blunder</strong> takes more average time than any other type of move.</p>
+<ul>
+<li>This is less obvious. We think blunders are made <strong>fast without thought</strong>.</li>
+</ul></li>
+<li><p><strong>Mistakes</strong> also take more time than <strong>normal</strong> moves.</p></li>
+</ol>
+<p>This is a heatmap of Time Left - Time Spent per type of move.
+<img src="finalproj_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>It becomes evident that people play <strong>bad</strong> moves <strong>early</strong> in the game</p>
+</div>
+<div id="time-ratio-by-move" class="section level3" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Time ratio by Move</h3>
+<p>Let’s define <strong>ratio = Time Spent / Time</strong>.</p>
+<p>This concept of <strong>ratio</strong> is helpful in the sense that the person could have spent more time considering the position.</p>
+<p>For instance, given <strong>1 second</strong> of time left and the player makes a move in <strong>1 second</strong>, then there is less possibility that the player would have detected a better move.</p>
+<p>However, given <strong>60 second</strong> of time left and the player makes a move in <strong>1 second</strong> and <strong>blunder</strong>, this is a bad decision and probably the player should have thought more before they made the move.</p>
+<pre><code>## # A tibble: 4 x 3
+##   Type     mean   std
+##   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;
+## 1 dubious 0.142 0.130
+## 2 mistake 0.167 0.141
+## 3 blunder 0.177 0.154
+## 4 normal  0.225 0.182</code></pre>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>From this graph,</p>
+<ol style="list-style-type: decimal">
+<li><p>The mean of <strong>normal</strong> moves are much higher than other moves.</p>
+<ul>
+<li><strong>Normal</strong> moves are a result of higher ratio of Time Spent / Time.</li>
+</ul></li>
+<li><p><strong>Dubious</strong> moves are most likely intended or result of bad understanding early on in the game.</p></li>
+<li><p><strong>Mistakes</strong> and <strong>blunders</strong> are also a result of not enough thinking.</p>
+<ul>
+<li>Players could have spent <strong>much more time</strong> thinking about the position and not blundering.</li>
+</ul></li>
+</ol>
 
+</div>
+</div>
 </div>
             </section>
 
