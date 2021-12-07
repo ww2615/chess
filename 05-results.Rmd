@@ -177,6 +177,14 @@ From this graph,
 3. **Mistakes** and **blunders** are also a result of not enough thinking.
 
     - Players could have spent **much more time** thinking about the position and not blundering.
+    
+### Quality of move during low time ratio
+
+Players have to make decisions in a short period of time 
+
+
+
+
 ```{r}
 #game<- read.csv("~/Desktop/project test/ChessData/game.csv")
 #Return_Type <- function(move){
@@ -233,12 +241,9 @@ From this graph,
 
 2. Considering **time forfeit** games only, **time ratio** of the winner are mostly below 12.5%
 
-## 
 
-## Quality of move during low time
 
-Players have to make decisions in a short period of time 
-###
+
 
 
 

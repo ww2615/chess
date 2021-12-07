@@ -31,3 +31,4 @@ quality-of-move-during-low-time
 investigating-how-the-games-ended
 section
 time-left-and-time-ratio-when-the-losers-ran-out-of-run
+quality-of-move-during-low-time-ratio
