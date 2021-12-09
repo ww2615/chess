@@ -180,12 +180,42 @@ From this graph,
     
 ### Quality of move during low time 
 
-Players have to make decisions in a short period of time and the quality of decision is related to time. Using **Time ratio** is one of the ways to study the relationship
+Players have to make decisions in a short period of time and the quality of decision is related to time. Using **Time ratio** is one of the ways to study the relationship. Thanks to the computer evaluation made to each moves, we can use the **Eval** and **EvalDiff** from the dataset to quantify quality of move and the difference in quality of each pair of moves. 
 
-#### Quality of moves when remaining time is low
+The result of this section would give insight to players that what piece would have better odds of having a higher evaluation under low time.  Here's the summary of the statistics:
 
-#### Quality of moves when time spent is low
+```{r}
+#gametemp<-gametemp%>%filter(Move!="Move")%>%mutate(Eval=as.numeric(Eval),EvalDiff=as.numeric(EvalDiff))%>%
+    #na.omit()
+#gametemp%>%select(EvalDiff,Eval)%>%summary()
+summary<-read.csv("~/Desktop/chessgame_analysis/data/qualitysummary.csv")
+summary
+```
+![](images/00003e.PNG)
 
+To represent low time with **Time ratio**, a specific range was chosen [0,0.0025] since we found that from 5.1.2 and the above graph that the majority of **Time ratio** is from 0.0015 to 0.01. Thus, one-forth of 0.01 was used to represent low time. 
+
+![](images/000074.PNG)
+
+1. Within the time ratio of 0.0025, it is found that Evaluation difference increases as the time ratio decrease further for most pieces except rook. Which means the advantage of moving a piece in a lower time ratio would be better. 
+
+2. Comparing the six pieces, **Pawn** has the highest odds of being a high quality move, followed by **Bishop** and **Knight**
+
+3. Thus, when the player has to make a quick decision with very less time left, **Pawn** and **Bishop** should take piority. 
+
+4. However, it is noticed that when time ratio decreases to 0.00165, the evaluation difference almost reduced to zero. Thus, it is not recommended to make a move with a very low **Time ratio**. 
+
+#### Quality of moves by piece when remaining time is low
+![](images/000089.PNG)
+
+1. Taking the perspective of Time left, it is different from the Time ratio graph. There is no significant increase in EvalDiff as the time left is reducing from 60 seconds. However, we could still find out moving which piece would yeild the highest possibility of a better evaluation. 
+
+2. **King** has the highest Evaluation, followed by **Rook** and **Pawn**. **Bishop** and **Knight** should be avoided to be used when remaining time is low as they have the lowest Evaluation difference. 
+
+#### Quality of moves by piece when time spent is low
+![](images/00008b.PNG)
+
+1. It is found that the lowest time spent on a move would be around 0.6 seconds. Again, unlike the time ratio graph, the span of Evaluation difference stays the same . However, in contrast to the previous graph, **Pawn** is statistically the best pick for move if the player wants to make a quick response, followed by **King**. **Queen** should be avoid to use when a quick response is needed as the Evaluation difference is the smallest. 
 
 ```{r}
 #game<- read.csv("~/Desktop/project test/ChessData/game.csv")
@@ -233,6 +263,7 @@ From this graph,
 1. The majority of matches ended within **25** moves, however, matches that end with one player ran out of time were mostly happening at **35** moves.
 
 2. Number of matches ended with the reason of rules infraction is neglectable.
+
 ```{r}
 #plot3<-gametemp[order(nrow(gametemp):1),]%>%distinct(Result,WhiteElo,BlackElo, .keep_all=TRUE)%>%
 #  mutate(Result=ifelse(Result=="0-1","White wins",ifelse(Result=="1-0","Black #wins","draw")))%>%filter(Result=="draw")%>%ggplot(aes(fct_infreq(Piece),fill=fct_infreq(Piece)))+geom_b#ar()+scale_fill_brewer(palette="Blues",direction=1)+xlab("Piece")+theme(legend.position="none")+ggtitle#("Draw")
@@ -245,7 +276,34 @@ From this graph,
 #gametemp[order(nrow(gametemp):1),]%>%distinct(Result,WhiteElo,BlackElo, .keep_all=TRUE)%>%
 #  mutate(Result=ifelse(Result=="0-1","White wins",ifelse(Result=="1-0","Black #wins","draw")))%>%filter(Result!="Result")%>%ggplot(aes(x=Piece,y=frequency(Piece),fill=Mate))+geom_bar#(position="fill",stat="identity")+scale_fill_brewer(palette="Blues",direction=-1)+xlab("Piece")+ylab("P#ercentage")+
 #  coord_flip()+facet_wrap(~Result)
+
+#gametemp[order(nrow(gametemp):1),]%>%distinct(Result,WhiteElo,BlackElo, .keep_all=TRUE)%>%filter(TimeInt<10,Timet<=250)%>%ggplot(aes(y=TimeInt,x=Timet))+geom_density_2d_filled()+
+ # geom_abline(slope=1,intercept=0,color="white")+
+ # annotate(geom="text",x=16,y=5,label="Time ratio = 1",color="white")+
+ # annotate(geom="text",x=65,y=5,label="Time ratio = 0.1",color="white")+
+ # annotate(geom="text",x=160,y=2.5,label="Time ratio = 0.01",color="white")+
+ # annotate(geom="text",x=175,y=0.5,label="Time ratio = 0.001",color="white")+
+ # geom_abline(slope=0.1,intercept=0,color="white")+
+ # geom_abline(slope=0.01,intercept=0,color="white")+
+ # geom_abline(slope=0.001,intercept=0,color="white")+
+ # theme(legend.position="none")+
+ # ylab("time spent")+
+ # xlab("time left")
 ```
+
+
+   2D density graph for time left vs time spent for the last move
+![](images/000287.PNG)
+From this graph,
+
+1. Most **Time ratio** lies between 0.1 and 0.01 when it is the last move. 
+
+2. We can see the most densed area of graph happens when time left is less than 25 and time spent is less than 1.25. That shows when it comes to the last move, the time left is no more than 25 seconds and the time spent is no more than 1.25 seconds. 
+
+3. Moreover, there is another peak occurs when remaining time is around 225 seconds. That tells a large number of games ended during that amount of **Time left**
+
+4. Another way to see it, majority of the games end around Time ratio = **0.1** and **0.01**
+
 ### Use of pieces at the end game
 ![](images/0001d6.PNG)
 ![](images/000033.PNG)
@@ -256,7 +314,9 @@ From this graph,
 
 3. In games that had results of **Draw**, the distribution is different with **King** being the most used one if it is a **hung mate**.
 
+Please note that **Time ratio** is scaled-up from **0 to 1** to **0 to 100%**:
 ![](images/000073.PNG)
+
 
 This graph plots with the four most frequently used pieces for winning move. The relationship between **Time ratio** and **Move number** gave some extra insights to the use of peices at the end game
 
@@ -277,11 +337,12 @@ This graph plots with the four most frequently used pieces for winning move. The
 ### Time left and time ratio when the losers ran out of time
 ![](images/000123.PNG)
 
+Please note that **Time ratio** is scaled-up from **0 to 1** to **0 to 100%**:
 ![](images/00003b.PNG)
 
 1. It could be seen that the majority of players who won because their opponent ran out of time had suffucient time left. Most of them had more than 30 seconds left.
 
-2. Considering **time forfeit** games only, **time ratio** of the winner are mostly below 10% while the density plot shows it concentrated at **Time ratio** = 2 and **Move Number** = 30.
+2. Considering **time forfeit** games only, **time ratio** of the winner are mostly below 10% while the density plot shows it concentrated at **Time ratio** = 0.02 and **Move Number** = 30.
 
 3. Also, we can observe that there are less outliers for **time ratio** when the move number is very high. It is believed that games that have a hugh amount of moves would result in smaller time ratio as there is not much time left. 
 

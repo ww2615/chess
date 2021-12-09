@@ -37,3 +37,5 @@ time-left-and-time-ratio-when-the-losers-ran-out-of-time
 use-of-pieces-at-the-end-game
 quality-of-moves-when-remaining-time-is-low
 quality-of-moves-when-time-spent-is-low
+quality-of-moves-by-piece-when-remaining-time-is-low
+quality-of-moves-by-piece-when-time-spent-is-low
