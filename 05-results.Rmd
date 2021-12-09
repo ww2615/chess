@@ -138,7 +138,7 @@ It becomes evident that people play **bad** moves **early** in the game
 
 ### Time ratio by Move
 
-Let's define **ratio = Time Spent / Time**.
+Let's define **ratio = Time Spent / Time Left**.
 
 This concept of **ratio** is helpful in the sense that the person could have spent more time considering the position.
 
@@ -178,11 +178,13 @@ From this graph,
 
     - Players could have spent **much more time** thinking about the position and not blundering.
     
-### Quality of move during low time ratio
+### Quality of move during low time 
 
-Players have to make decisions in a short period of time 
+Players have to make decisions in a short period of time and the quality of decision is related to time. Using **Time ratio** is one of the ways to study the relationship
 
+#### Quality of moves when remaining time is low
 
+#### Quality of moves when time spent is low
 
 
 ```{r}
@@ -231,15 +233,57 @@ From this graph,
 1. The majority of matches ended within **25** moves, however, matches that end with one player ran out of time were mostly happening at **35** moves.
 
 2. Number of matches ended with the reason of rules infraction is neglectable.
+```{r}
+#plot3<-gametemp[order(nrow(gametemp):1),]%>%distinct(Result,WhiteElo,BlackElo, .keep_all=TRUE)%>%
+#  mutate(Result=ifelse(Result=="0-1","White wins",ifelse(Result=="1-0","Black #wins","draw")))%>%filter(Result=="draw")%>%ggplot(aes(fct_infreq(Piece),fill=fct_infreq(Piece)))+geom_b#ar()+scale_fill_brewer(palette="Blues",direction=1)+xlab("Piece")+theme(legend.position="none")+ggtitle#("Draw")
 
-### Time left and time ratio when the losers ran out of run
+#plot4<-gametemp[order(nrow(gametemp):1),]%>%distinct(Result,WhiteElo,BlackElo, .keep_all=TRUE)%>%
+#  mutate(Result=ifelse(Result=="0-1","White wins",ifelse(Result=="1-0","Black #wins","draw")))%>%filter(Result!="draw")%>%ggplot(aes(fct_infreq(Piece),fill=fct_infreq(Piece)))+geom_b#ar()+scale_fill_brewer(palette="Blues",direction=1)+xlab("Piece")+theme(legend.position="none")+ggtitle#("non Draw")
+
+#plot45<-grid.arrange(plot3,plot4)
+
+#gametemp[order(nrow(gametemp):1),]%>%distinct(Result,WhiteElo,BlackElo, .keep_all=TRUE)%>%
+#  mutate(Result=ifelse(Result=="0-1","White wins",ifelse(Result=="1-0","Black #wins","draw")))%>%filter(Result!="Result")%>%ggplot(aes(x=Piece,y=frequency(Piece),fill=Mate))+geom_bar#(position="fill",stat="identity")+scale_fill_brewer(palette="Blues",direction=-1)+xlab("Piece")+ylab("P#ercentage")+
+#  coord_flip()+facet_wrap(~Result)
+```
+### Use of pieces at the end game
+![](images/0001d6.PNG)
+![](images/000033.PNG)
+
+1. The majority of non draw games ended with **Queen** being the last piece to move, followed by **Rook**. However, in draw games, **King** and **Queen** are most frequently used pieces for the last move. 
+
+2. Taking the different kinds of mate into factor and faceting the data by the result, we can see that Black and White side has extremely close distribution for the three types of **Mate** when it comes to wnning. **Knight** is the most used piece for a normal **mate**, followed by **Bishop** and **Pawn**. However, if it is a missed mate, **Queen** would be the most used piece. **King** would be the most used piece when it is a **hung mate**. 
+
+3. In games that had results of **Draw**, the distribution is different with **King** being the most used one if it is a **hung mate**.
+
+![](images/000073.PNG)
+
+This graph plots with the four most frequently used pieces for winning move. The relationship between **Time ratio** and **Move number** gave some extra insights to the use of peices at the end game
+
+1. As expected, **King** has the widest span on the **Move number** axis and has the lowest **Time ratio**. Long span on the **Move number** shows that **King** tends to survive longer as  **King** is the most valuable piece which determines the winner of the game so any move made to it should be thoughtful and careful, thus, a lower **time ratio**. 
+
+2. With **Queen**, **Rook**, and **Bishop** not being that decisive to the outcome of the game compared to **King**, we can see all of them has a lower span on the **Move number** axis.
+
+```{r}
+#library(scales)
+#gametemp=game
+#gametemp$Timeratio<-rescale(gametemp$Timeratio, from = c(0, 1), to = c(0, 100))
+#gametemp[order(nrow(gametemp):1),]%>%distinct(Result,WhiteElo,BlackElo, .keep_all=TRUE)%>%select(Termination,Timeratio,MoveNumber)%>%
+#  filter(Termination=="Time forfeit")%>%
+#  ggplot(aes(x=MoveNumber,y=Timeratio,fill=fct_relevel(Termination,"normal","Time forfeit"),color=fct_relevel(Termination,"normal","Time forfeit")))+
+#  geom_point(size =2,alpha=0.3)+ylim(0,100)+xlim(0,100)+theme_classic()+
+#  ggtitle("Winners' Time ratio vs Move Number")
+```
+### Time left and time ratio when the losers ran out of time
 ![](images/000123.PNG)
 
-![](images/000125.PNG)
+![](images/00003b.PNG)
 
 1. It could be seen that the majority of players who won because their opponent ran out of time had suffucient time left. Most of them had more than 30 seconds left.
 
-2. Considering **time forfeit** games only, **time ratio** of the winner are mostly below 12.5%
+2. Considering **time forfeit** games only, **time ratio** of the winner are mostly below 10% while the density plot shows it concentrated at **Time ratio** = 2 and **Move Number** = 30.
+
+3. Also, we can observe that there are less outliers for **time ratio** when the move number is very high. It is believed that games that have a hugh amount of moves would result in smaller time ratio as there is not much time left. 
 
 
 
