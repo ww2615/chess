@@ -39,3 +39,4 @@ quality-of-moves-when-remaining-time-is-low
 quality-of-moves-when-time-spent-is-low
 quality-of-moves-by-piece-when-remaining-time-is-low
 quality-of-moves-by-piece-when-time-spent-is-low
+scope-of-the-project
