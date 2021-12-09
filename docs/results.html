@@ -217,12 +217,38 @@
 </div>
 <div id="quality-of-move-during-low-time" class="section level3" number="5.1.3">
 <h3><span class="header-section-number">5.1.3</span> Quality of move during low time</h3>
-<p>Players have to make decisions in a short period of time and the quality of decision is related to time. Using <strong>Time ratio</strong> is one of the ways to study the relationship</p>
-<div id="quality-of-moves-when-remaining-time-is-low" class="section level4" number="5.1.3.1">
-<h4><span class="header-section-number">5.1.3.1</span> Quality of moves when remaining time is low</h4>
+<p>Players have to make decisions in a short period of time and the quality of decision is related to time. Using <strong>Time ratio</strong> is one of the ways to study the relationship. Thanks to the computer evaluation made to each moves, we can use the <strong>Eval</strong> and <strong>EvalDiff</strong> from the dataset to quantify quality of move and the difference in quality of each pair of moves.</p>
+<p>The result of this section would give insight to players that what piece would have better odds of having a higher evaluation under low time. Here’s the summary of the statistics:</p>
+<pre><code>##    X         X...EvalDiff          X.....Eval
+## 1 NA Min.   :-150.92000   Min.   :-152.6500  
+## 2 NA 1st Qu.:  -0.31000   1st Qu.:  -2.0000  
+## 3 NA Median :   0.00000   Median :   0.1400  
+## 4 NA Mean   :   0.00394   Mean   :   0.3011  
+## 5 NA 3rd Qu.:   0.31000   3rd Qu.:   2.8400  
+## 6 NA Max.   : 150.47000   Max.   : 152.6500</code></pre>
+<p><img src="images/00003e.png" /></p>
+<p>To represent low time with <strong>Time ratio</strong>, a specific range was chosen [0,0.0025] since we found that from 5.1.2 and the above graph that the majority of <strong>Time ratio</strong> is from 0.0015 to 0.01. Thus, one-forth of 0.01 was used to represent low time.</p>
+<p><img src="images/000074.png" /></p>
+<ol style="list-style-type: decimal">
+<li><p>Within the time ratio of 0.0025, it is found that Evaluation difference increases as the time ratio decrease further for most pieces except rook. Which means the advantage of moving a piece in a lower time ratio would be better.</p></li>
+<li><p>Comparing the six pieces, <strong>Pawn</strong> has the highest odds of being a high quality move, followed by <strong>Bishop</strong> and <strong>Knight</strong></p></li>
+<li><p>Thus, when the player has to make a quick decision with very less time left, <strong>Pawn</strong> and <strong>Bishop</strong> should take piority.</p></li>
+<li><p>However, it is noticed that when time ratio decreases to 0.00165, the evaluation difference almost reduced to zero. Thus, it is not recommended to make a move with a very low <strong>Time ratio</strong>.</p></li>
+</ol>
+<div id="quality-of-moves-by-piece-when-remaining-time-is-low" class="section level4" number="5.1.3.1">
+<h4><span class="header-section-number">5.1.3.1</span> Quality of moves by piece when remaining time is low</h4>
+<p><img src="images/000089.png" /></p>
+<ol style="list-style-type: decimal">
+<li><p>Taking the perspective of Time left, it is different from the Time ratio graph. There is no significant increase in EvalDiff as the time left is reducing from 60 seconds. However, we could still find out moving which piece would yeild the highest possibility of a better evaluation.</p></li>
+<li><p><strong>King</strong> has the highest Evaluation, followed by <strong>Rook</strong> and <strong>Pawn</strong>. <strong>Bishop</strong> and <strong>Knight</strong> should be avoided to be used when remaining time is low as they have the lowest Evaluation difference.</p></li>
+</ol>
 </div>
-<div id="quality-of-moves-when-time-spent-is-low" class="section level4" number="5.1.3.2">
-<h4><span class="header-section-number">5.1.3.2</span> Quality of moves when time spent is low</h4>
+<div id="quality-of-moves-by-piece-when-time-spent-is-low" class="section level4" number="5.1.3.2">
+<h4><span class="header-section-number">5.1.3.2</span> Quality of moves by piece when time spent is low</h4>
+<p><img src="images/00008b.png" /></p>
+<ol style="list-style-type: decimal">
+<li>It is found that the lowest time spent on a move would be around 0.6 seconds. Again, unlike the time ratio graph, the span of Evaluation difference stays the same . However, in contrast to the previous graph, <strong>Pawn</strong> is statistically the best pick for move if the player wants to make a quick response, followed by <strong>King</strong>. <strong>Queen</strong> should be avoid to use when a quick response is needed as the Evaluation difference is the smallest.</li>
+</ol>
 </div>
 </div>
 </div>
@@ -233,7 +259,14 @@
 <p>From this graph,</p>
 <ol style="list-style-type: decimal">
 <li><p>The majority of matches ended within <strong>25</strong> moves, however, matches that end with one player ran out of time were mostly happening at <strong>35</strong> moves.</p></li>
-<li><p>Number of matches ended with the reason of rules infraction is neglectable.</p></li>
+<li><p>Number of matches ended with the reason of rules infraction is neglectable.</p>
+<p>2D density graph for time left vs time spent for the last move
+<img src="images/000287.png" />
+From this graph,</p></li>
+<li><p>Most <strong>Time ratio</strong> lies between 0.1 and 0.01 when it is the last move.</p></li>
+<li><p>We can see the most densed area of graph happens when time left is less than 25 and time spent is less than 1.25. That shows when it comes to the last move, the time left is no more than 25 seconds and the time spent is no more than 1.25 seconds.</p></li>
+<li><p>Moreover, there is another peak occurs when remaining time is around 225 seconds. That tells a large number of games ended during that amount of <strong>Time left</strong></p></li>
+<li><p>Another way to see it, majority of the games end around Time ratio = <strong>0.1</strong> and <strong>0.01</strong></p></li>
 </ol>
 <div id="use-of-pieces-at-the-end-game" class="section level3" number="5.2.1">
 <h3><span class="header-section-number">5.2.1</span> Use of pieces at the end game</h3>
@@ -244,7 +277,8 @@
 <li><p>Taking the different kinds of mate into factor and faceting the data by the result, we can see that Black and White side has extremely close distribution for the three types of <strong>Mate</strong> when it comes to wnning. <strong>Knight</strong> is the most used piece for a normal <strong>mate</strong>, followed by <strong>Bishop</strong> and <strong>Pawn</strong>. However, if it is a missed mate, <strong>Queen</strong> would be the most used piece. <strong>King</strong> would be the most used piece when it is a <strong>hung mate</strong>.</p></li>
 <li><p>In games that had results of <strong>Draw</strong>, the distribution is different with <strong>King</strong> being the most used one if it is a <strong>hung mate</strong>.</p></li>
 </ol>
-<p><img src="images/000073.png" /></p>
+<p>Please note that <strong>Time ratio</strong> is scaled-up from <strong>0 to 1</strong> to <strong>0 to 100%</strong>:
+<img src="images/000073.png" /></p>
 <p>This graph plots with the four most frequently used pieces for winning move. The relationship between <strong>Time ratio</strong> and <strong>Move number</strong> gave some extra insights to the use of peices at the end game</p>
 <ol style="list-style-type: decimal">
 <li><p>As expected, <strong>King</strong> has the widest span on the <strong>Move number</strong> axis and has the lowest <strong>Time ratio</strong>. Long span on the <strong>Move number</strong> shows that <strong>King</strong> tends to survive longer as <strong>King</strong> is the most valuable piece which determines the winner of the game so any move made to it should be thoughtful and careful, thus, a lower <strong>time ratio</strong>.</p></li>
@@ -254,10 +288,11 @@
 <div id="time-left-and-time-ratio-when-the-losers-ran-out-of-time" class="section level3" number="5.2.2">
 <h3><span class="header-section-number">5.2.2</span> Time left and time ratio when the losers ran out of time</h3>
 <p><img src="images/000123.png" /></p>
-<p><img src="images/00003b.png" /></p>
+<p>Please note that <strong>Time ratio</strong> is scaled-up from <strong>0 to 1</strong> to <strong>0 to 100%</strong>:
+<img src="images/00003b.png" /></p>
 <ol style="list-style-type: decimal">
 <li><p>It could be seen that the majority of players who won because their opponent ran out of time had suffucient time left. Most of them had more than 30 seconds left.</p></li>
-<li><p>Considering <strong>time forfeit</strong> games only, <strong>time ratio</strong> of the winner are mostly below 10% while the density plot shows it concentrated at <strong>Time ratio</strong> = 2 and <strong>Move Number</strong> = 30.</p></li>
+<li><p>Considering <strong>time forfeit</strong> games only, <strong>time ratio</strong> of the winner are mostly below 10% while the density plot shows it concentrated at <strong>Time ratio</strong> = 0.02 and <strong>Move Number</strong> = 30.</p></li>
 <li><p>Also, we can observe that there are less outliers for <strong>time ratio</strong> when the move number is very high. It is believed that games that have a hugh amount of moves would result in smaller time ratio as there is not much time left.</p></li>
 </ol>
 
