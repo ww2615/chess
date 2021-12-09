@@ -75,14 +75,12 @@
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#background"><i class="fa fa-check"></i><b>1.1</b> Background</a>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#background"><i class="fa fa-check"></i><b>1.1</b> Background</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#scope-of-the-project"><i class="fa fa-check"></i><b>1.2</b> Scope of the Project</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#introductory-chess-knowledge"><i class="fa fa-check"></i><b>1.3</b> Introductory Chess Knowledge</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#specific-libraries-used"><i class="fa fa-check"></i><b>1.4</b> Specific Libraries Used</a>
 <ul>
-<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#scope-of-the-project"><i class="fa fa-check"></i><b>1.1.1</b> Scope of the Project</a></li>
-</ul></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#introductory-chess-knowledge"><i class="fa fa-check"></i><b>1.2</b> Introductory Chess Knowledge</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#specific-libraries-used"><i class="fa fa-check"></i><b>1.3</b> Specific Libraries Used</a>
-<ul>
-<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#rchess"><i class="fa fa-check"></i><b>1.3.1</b> Rchess</a></li>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#rchess"><i class="fa fa-check"></i><b>1.4.1</b> Rchess</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a>
@@ -157,13 +155,13 @@
 <h2><span class="header-section-number">1.1</span> Background</h2>
 <p>Chess is one of the most popular games in the world which could be dated back to the 15th century. In today’s world, more than millions of people played everyday. According to a press release by AGON, 605 million adults play chess regularly, which is comparable to the number of regular users of Facebook. Thanks to the two biggest platforms for online chess, Chess and Lichess, either new players or experienced players could match-make with people with similar skill levels.</p>
 <p>While the rules for chess is simple and easy to learn, it is all about thinking and strategy. The number of ways to play go exponential after each move. 400 possible setup exist after one move by each player and there are 197742 possible game after the second round of move. The possible number of game goes up to 121 million after the three pair of moves which is why it is always a popular topic for ai research company. For this project, we took advantage of the open database of Lichess.org that provides up to 1 billion games of data per month to analyze and discover insightful takeaways for future researchers on this topic.</p>
-<div id="scope-of-the-project" class="section level3" number="1.1.1">
-<h3><span class="header-section-number">1.1.1</span> Scope of the Project</h3>
+</div>
+<div id="scope-of-the-project" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Scope of the Project</h2>
 <p>Since the game of chess itself is profound enough that many has done years of research on it, it is not possible for this project to visit every aspect of chess. For this project, we will focus on the relationship of time and moves statistically instead of studying series of moves that would be related to strategy. We hope the results of this project would provide players a new perspective on choosing a move when he/she is under time pressure. Thus, we have implemented an idea of <strong>Time ratio</strong> which would be discussed in later sessions. With different plotting techniques, we expect to visualize some meaningful findings.</p>
 </div>
-</div>
-<div id="introductory-chess-knowledge" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> Introductory Chess Knowledge</h2>
+<div id="introductory-chess-knowledge" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Introductory Chess Knowledge</h2>
 <p>As most chess games do, online chess is also played in a specific time format. You are givena specific amount of time and have to make moves within that time. If your time reaches 0, you immediately lose. Time formats are usually notated in the form <strong>“a + b”</strong> where <strong>a</strong> is the <strong>time you start with</strong> and <strong>b</strong> is the <strong>time you get after every move</strong> also called <strong>increment</strong>.</p>
 <p>There are also classification for chess moves. In this project, we will be mostly dealing with bad moves which classify into 3 categories, <strong>dubious</strong>, <strong>mistake</strong>, and <strong>blunder</strong>. <strong>Dubious moves</strong> are objectively bad but possibly have some merits. <strong>Mistakes</strong> are bad moves that should not have been played. <strong>Blunders</strong> are bad mistakes that end up in a loss of material or in a mating sequence.</p>
 <table>
@@ -183,10 +181,10 @@
 </tbody>
 </table>
 </div>
-<div id="specific-libraries-used" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> Specific Libraries Used</h2>
-<div id="rchess" class="section level3" number="1.3.1">
-<h3><span class="header-section-number">1.3.1</span> Rchess</h3>
+<div id="specific-libraries-used" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Specific Libraries Used</h2>
+<div id="rchess" class="section level3" number="1.4.1">
+<h3><span class="header-section-number">1.4.1</span> Rchess</h3>
 <p>A package developed by Joshua Kunst that wraps the chess.js javascript library and the chessboardjs library for analyzing chess move, piece movement and check detection.</p>
 <p>For more info, please visit: {<a href="https://www.github.com/jbkunst/rchess" class="uri">https://www.github.com/jbkunst/rchess</a>}</p>
 
