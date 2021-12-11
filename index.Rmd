@@ -10,9 +10,9 @@ site: bookdown::bookdown_site
 
 ## Background
 
-Chess is one of the most popular games in the world which could be dated back to the 15th century. In today's world, more than millions of people played everyday. According to a press release by AGON, 605 million adults play chess regularly, which is comparable to the number of regular users of Facebook. Thanks to the two biggest platforms for online chess, Chess and Lichess, either new players or experienced players could match-make with people with similar skill levels.  
+Chess is one of the most popular and oldest games in the world which could be dated back to the 15th century. In today's world, more than millions of people play chess every day. According to a press release by AGON, 605 million adults play chess regularly, which is comparable to the number of regular users of Facebook. Thanks to the two biggest platforms for online chess, Chess.com and Lichess.org, either new players or experienced players could match-make with people with similar skill levels.  
 
-While the rules for chess is simple and easy to learn, it is all about thinking and strategy. The number of ways to play go exponential after each move. 400 possible setup exist after one move by each player and there are 197742 possible game after the second round of move. The possible number of game goes up to 121 million after the three pair of moves which is why it is always a popular topic for ai research company. For this project, we took advantage of the open database of Lichess.org that provides up to 1 billion games of data per month to analyze and discover insightful takeaways for future researchers on this topic. 
+While chess rules are simple and easy to learn, chess is full of ideas and strategies. The number of positions grow exponentially every move. After white and black moves one piece each, the game can reach 400 positions. After the second and third move, 197742 and 121 million positions can be reached. The complexity of chess contrary to its simple rules has led it to be one of the hot topics in AI research. For this project, we took advantage of the open database of Lichess.org that provides up to 1 billion games of data per month to analyze and discovered insightful takeaways for future researchers on this topic. 
 
 ## Scope of the Project
 
@@ -21,9 +21,9 @@ Since the game of chess itself is profound enough that many has done years of re
 
 ## Introductory Chess Knowledge
 
-As most chess games do, online chess is also played in a specific time format. You are givena  specific amount of time and have to make moves within that time. If your time reaches 0, you immediately lose. Time formats are usually notated in the form **"a + b"** where **a** is the **time you start with** and **b** is the **time you get after every move** also called **increment**.  
+As most chess games do, online chess is also played in a specific time format. You are given aspecific amount of time and have to make moves within that time. If your time reaches 0, you immediately lose. Time formats are usually notated in the form **"a + b"** where **a** is the **time you start with** and **b** is the **time you get after every move** also called **increment**.  
 
-There are also classification for chess moves. In this project, we will be mostly dealing with bad moves which classify into 3 categories, **dubious**, **mistake**, and **blunder**. **Dubious moves** are objectively bad but possibly have some merits. **Mistakes** are bad moves that should not have been played. **Blunders** are bad mistakes that end up in a loss of material or in a mating sequence. 
+There are also classification for chess moves. In this project, we will be mostly dealing with bad moves which classify into 3 categories, **dubious**, **mistake**, and **blunder**. **Dubious moves** are objectively bad but possibly have some merits. **Mistakes** are bad moves that should not have been played. **Blunders** are bad mistakes that end up in a loss of material or a mating sequence. 
 
 Dubious Move|Mistake|Blunder
 :-------------------------:|:-------------------------:|:-------------------------:

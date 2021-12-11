@@ -20,7 +20,7 @@ From the data, we deduced that 7,142,630 / 88,092,721 = **8.1 %** of the games w
 
 We decided to focus on the **7,142,630** games that were annotated.
 
-The first formatting process was done using [eval.py](code/eval.py).
+The formatting process was done using [eval.py](code/eval.py).
 
 This process was different from the read.py that the resulting csv(pgn_index.csv) from eval.py contained the PGN descriptions of every game played.
 
@@ -30,10 +30,9 @@ The second formatting process used [edit.py](code/edit.py).
 
 The formatting process intended to change **each row** to **moves** instead of **games**.
 
-
 The missing data of this csv data set will be examined in the next chapter.
 
-464,436,334 annotated moves have been played but this data set was impossible to work with. 
+464,436,334 annotated moves have been played but this data set was impossible to work with due to its size. (The resulting size was 32.9 GB)
 
 We decided to focus on the most popular time control format **600 + 0** or 10 minutes with no increment.
 
@@ -83,9 +82,11 @@ Let's focus on 2...d6?
    
 These columns were also used in 600+0.csv.
 
+The transformation was processed using [edit.py](code/edit.py).
+
 ## Focusing on 600+0 data
 
-We can run a weighted t-test and chi-square test on the Elo of players
+We can run a weighted t-test and chi-squared test on the Elo of players
 
 Both results show that the **mean** of both data is the same and the data are **dependent**
 

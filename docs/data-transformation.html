@@ -162,13 +162,13 @@ From the data, we deduced that 7,142,630 / 88,092,721 = <strong>8.1 %</strong> o
 <div id="formatting-the-raw-data" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Formatting the Raw Data</h2>
 <p>We decided to focus on the <strong>7,142,630</strong> games that were annotated.</p>
-<p>The first formatting process was done using <a href="code/eval.py">eval.py</a>.</p>
+<p>The formatting process was done using <a href="code/eval.py">eval.py</a>.</p>
 <p>This process was different from the read.py that the resulting csv(pgn_index.csv) from eval.py contained the PGN descriptions of every game played.</p>
 <p>This process was conducted to generate a working <strong>csv dataset</strong> independent from the original data set.</p>
 <p>The second formatting process used <a href="code/edit.py">edit.py</a>.</p>
 <p>The formatting process intended to change <strong>each row</strong> to <strong>moves</strong> instead of <strong>games</strong>.</p>
 <p>The missing data of this csv data set will be examined in the next chapter.</p>
-<p>464,436,334 annotated moves have been played but this data set was impossible to work with.</p>
+<p>464,436,334 annotated moves have been played but this data set was impossible to work with due to its size. (The resulting size was 32.9 GB)</p>
 <p>We decided to focus on the most popular time control format <strong>600 + 0</strong> or 10 minutes with no increment.</p>
 <p>This time format is <strong>16.91 %</strong> of all games.</p>
 <p>The <a href="data/timecount.csv">timecount.csv</a> was generated through <a href="code/count.py">count.py</a>.</p>
@@ -196,10 +196,11 @@ Since the <strong>quality of moves</strong> and <strong>time</strong> was the fo
 </ul></li>
 </ul>
 <p>These columns were also used in 600+0.csv.</p>
+<p>The transformation was processed using <a href="code/edit.py">edit.py</a>.</p>
 </div>
 <div id="focusing-on-6000-data" class="section level2" number="3.4">
 <h2><span class="header-section-number">3.4</span> Focusing on 600+0 data</h2>
-<p>We can run a weighted t-test and chi-square test on the Elo of players</p>
+<p>We can run a weighted t-test and chi-squared test on the Elo of players</p>
 <p>Both results show that the <strong>mean</strong> of both data is the same and the data are <strong>dependent</strong></p>
 <p>The <a href="data/elocount.csv">elocount.csv</a> and <a href="data/elo600count.csv">elo600count.csv</a> was generated through <a href="code/count.py">count.py</a>.</p>
 <pre><code>## $test
