@@ -4,15 +4,15 @@
 
 There were several limits to our analysis.
 
-1. The analysis was done exclusively on 600 + 0 Time Format.
+1. The analysis was done exclusively on **600 + 0** Time Format.
 
-From the previous section, we have discussed that this format is the most played time format on lichess.org and the elo of players were representative of the whole data set. However, it is still **17%** of the total games. There are other forms of chess games such as hyper bullet (less than 1 minute), bullet (1 - 3 minute), blitz(less than 10 minutes), rapid chess(10 - 60 minutes), and normal(90 minutes). Analysis of these different categorizations of chess could have yielded interesting insights.
+From the previous section, we have discussed that this format is the most played time format on lichess.org and the elo of players were representative of the whole data set. However, it is still **17%** of the total games. There are other forms of chess games such as `hyper bullet` (less than 1 minute), `bullet` (1 - 3 minute), `blitz` (less than 10 minutes), `rapid` (10 - 60 minutes), and `normal` (90 minutes). Analysis on these different categorizations of chess could have yielded interesting insights.
 
-2. The data set was gathered over a brief period.
+2. The data set was gathered over a **brief period**.
 
-The data set was exclusively collected in October 2021. Considering the history of chess, the gameplay and strategies in chess do not change in a month. However, using the data from a longer period would have represented the gameplay in lichess.org better.
+The data set was exclusively collected in **October 2021**. Considering the history of chess, the gameplay and strategies in chess do not change in a month. However, using the data from a longer period would have represented the gameplay in lichess.org better.
 
-3. The data set was exclusively from lichess.org.
+3. The data set was exclusively from **lichess.org**.
 
 For online chess, there are other well-established platforms such as chess.com or chess24. Depending on the platform, there will be differences between player gameplay. However, chess24 and chess.com do not have API systems that would allow access to gameplay data. 
 
