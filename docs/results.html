@@ -24,7 +24,7 @@
 <meta name="author" content="Ju Hyun Jeon Freddy Wong" />
 
 
-<meta name="date" content="2021-12-08" />
+<meta name="date" content="2021-12-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -76,10 +76,11 @@
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#background"><i class="fa fa-check"></i><b>1.1</b> Background</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#introductory-chess-knowledge"><i class="fa fa-check"></i><b>1.2</b> Introductory Chess Knowledge</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#specific-libraries-used"><i class="fa fa-check"></i><b>1.3</b> Specific Libraries Used</a>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#scope-of-the-project"><i class="fa fa-check"></i><b>1.2</b> Scope of the Project</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#introductory-chess-knowledge"><i class="fa fa-check"></i><b>1.3</b> Introductory Chess Knowledge</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#specific-libraries-used"><i class="fa fa-check"></i><b>1.4</b> Specific Libraries Used</a>
 <ul>
-<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#rchess"><i class="fa fa-check"></i><b>1.3.1</b> Rchess</a></li>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#rchess"><i class="fa fa-check"></i><b>1.4.1</b> Rchess</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a>
@@ -100,7 +101,8 @@
 <ul>
 <li class="chapter" data-level="3.1" data-path="data-transformation.html"><a href="data-transformation.html#understanding-the-raw-data"><i class="fa fa-check"></i><b>3.1</b> Understanding the Raw Data</a></li>
 <li class="chapter" data-level="3.2" data-path="data-transformation.html"><a href="data-transformation.html#formatting-the-raw-data"><i class="fa fa-check"></i><b>3.2</b> Formatting the Raw Data</a></li>
-<li class="chapter" data-level="3.3" data-path="data-transformation.html"><a href="data-transformation.html#focusing-on-6000-data"><i class="fa fa-check"></i><b>3.3</b> Focusing on 600+0 data</a></li>
+<li class="chapter" data-level="3.3" data-path="data-transformation.html"><a href="data-transformation.html#crafting-the-columns"><i class="fa fa-check"></i><b>3.3</b> Crafting the Columns</a></li>
+<li class="chapter" data-level="3.4" data-path="data-transformation.html"><a href="data-transformation.html#focusing-on-6000-data"><i class="fa fa-check"></i><b>3.4</b> Focusing on 600+0 data</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a>
 <ul>
@@ -111,7 +113,7 @@
 <ul>
 <li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#time-and-moves"><i class="fa fa-check"></i><b>5.1</b> Time and Moves</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="results.html"><a href="results.html#time-left-spent-by-move-type"><i class="fa fa-check"></i><b>5.1.1</b> Time Left, Spent by Move Type</a></li>
+<li class="chapter" data-level="5.1.1" data-path="results.html"><a href="results.html#time-amd-time-spent-by-move-type"><i class="fa fa-check"></i><b>5.1.1</b> Time amd Time Spent by Move Type</a></li>
 <li class="chapter" data-level="5.1.2" data-path="results.html"><a href="results.html#time-ratio-by-move"><i class="fa fa-check"></i><b>5.1.2</b> Time ratio by Move</a></li>
 <li class="chapter" data-level="5.1.3" data-path="results.html"><a href="results.html#quality-of-move-during-low-time"><i class="fa fa-check"></i><b>5.1.3</b> Quality of move during low time</a></li>
 </ul></li>
@@ -148,15 +150,17 @@
 <h2><span class="header-section-number">5.1</span> Time and Moves</h2>
 <p>How does time and the quality of moves correlate?</p>
 <p>We can first start by considering the simple case.</p>
-<div id="time-left-spent-by-move-type" class="section level3" number="5.1.1">
-<h3><span class="header-section-number">5.1.1</span> Time Left, Spent by Move Type</h3>
-<p>The distribution of <strong>Time Left</strong> and <strong>Time Spent</strong> by the type of moves people make.</p>
+<div id="time-amd-time-spent-by-move-type" class="section level3" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Time amd Time Spent by Move Type</h3>
+<p>The distribution of <strong>Time</strong> and <strong>Time Spent</strong> by the type of moves people make.</p>
 <p><img src="images/Result1.PNG" />
 <img src="images/Result2.PNG" />
 <img src="images/Result3.PNG" />
 <img src="images/Result4.PNG" /></p>
 <p>This graph provides a very unique insight to the correlation.</p>
-<p>For <strong>Time Left</strong>:</p>
+<div id="time" class="section level4" number="5.1.1.1">
+<h4><span class="header-section-number">5.1.1.1</span> Time</h4>
+<p>For <strong>Time</strong>:</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>Normal</strong> moves have the biggest std as expected.</p></li>
 <li><p>People have less <strong>Time Left</strong> after they make a <strong>blunder</strong> or <strong>mistake</strong></p></li>
@@ -173,6 +177,9 @@
 <li><p>For both fluctuations at 5mins and 1min, we can see the curves for <strong>normal</strong> moves peak earlier than the other type of moves and the other moves almost peaked at the same time. However, <strong>dubious</strong> moves happened the most when there are 5 minutes left while <strong>mistake</strong> moves happened the most when there is only 1 minute left.</p></li>
 <li><p>When the time left is less than 10 seconds, the distribution of the moves changed. <strong>Normal</strong> moves are made the most.</p></li>
 </ul>
+</div>
+<div id="time-spent" class="section level4" number="5.1.1.2">
+<h4><span class="header-section-number">5.1.1.2</span> Time Spent</h4>
 <p>For <strong>Time Spent</strong>:</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>Normal</strong> moves are made fast.</p>
@@ -190,9 +197,10 @@
 <p><img src="images/Result5.PNG" /></p>
 <p>It becomes evident that people play <strong>bad</strong> moves <strong>early</strong> in the game</p>
 </div>
+</div>
 <div id="time-ratio-by-move" class="section level3" number="5.1.2">
 <h3><span class="header-section-number">5.1.2</span> Time ratio by Move</h3>
-<p>Let’s define <strong>ratio = Time Spent / Time Left</strong>.</p>
+<p>Let’s define <strong>ratio = Time Spent / Time</strong>.</p>
 <p>This concept of <strong>ratio</strong> is helpful in the sense that the person could have spent more time considering the position.</p>
 <p>For instance, given <strong>1 second</strong> of time left and the player makes a move in <strong>1 second</strong>, then there is less possibility that the player would have detected a better move.</p>
 <p>However, given <strong>60 second</strong> of time left and the player makes a move in <strong>1 second</strong> and <strong>blunder</strong>, this is a bad decision and probably the player should have thought more before they made the move.</p>

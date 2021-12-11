@@ -24,7 +24,7 @@
 <meta name="author" content="Ju Hyun Jeon Freddy Wong" />
 
 
-<meta name="date" content="2021-12-03" />
+<meta name="date" content="2021-12-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -76,10 +76,11 @@
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#background"><i class="fa fa-check"></i><b>1.1</b> Background</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#introductory-chess-knowledge"><i class="fa fa-check"></i><b>1.2</b> Introductory Chess Knowledge</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#specific-libraries-used"><i class="fa fa-check"></i><b>1.3</b> Specific Libraries Used</a>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#scope-of-the-project"><i class="fa fa-check"></i><b>1.2</b> Scope of the Project</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#introductory-chess-knowledge"><i class="fa fa-check"></i><b>1.3</b> Introductory Chess Knowledge</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#specific-libraries-used"><i class="fa fa-check"></i><b>1.4</b> Specific Libraries Used</a>
 <ul>
-<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#rchess"><i class="fa fa-check"></i><b>1.3.1</b> Rchess</a></li>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#rchess"><i class="fa fa-check"></i><b>1.4.1</b> Rchess</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a>
@@ -100,7 +101,8 @@
 <ul>
 <li class="chapter" data-level="3.1" data-path="data-transformation.html"><a href="data-transformation.html#understanding-the-raw-data"><i class="fa fa-check"></i><b>3.1</b> Understanding the Raw Data</a></li>
 <li class="chapter" data-level="3.2" data-path="data-transformation.html"><a href="data-transformation.html#formatting-the-raw-data"><i class="fa fa-check"></i><b>3.2</b> Formatting the Raw Data</a></li>
-<li class="chapter" data-level="3.3" data-path="data-transformation.html"><a href="data-transformation.html#focusing-on-6000-data"><i class="fa fa-check"></i><b>3.3</b> Focusing on 600+0 data</a></li>
+<li class="chapter" data-level="3.3" data-path="data-transformation.html"><a href="data-transformation.html#crafting-the-columns"><i class="fa fa-check"></i><b>3.3</b> Crafting the Columns</a></li>
+<li class="chapter" data-level="3.4" data-path="data-transformation.html"><a href="data-transformation.html#focusing-on-6000-data"><i class="fa fa-check"></i><b>3.4</b> Focusing on 600+0 data</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a>
 <ul>
@@ -111,8 +113,14 @@
 <ul>
 <li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#time-and-moves"><i class="fa fa-check"></i><b>5.1</b> Time and Moves</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="results.html"><a href="results.html#time-left-spent-by-move-type"><i class="fa fa-check"></i><b>5.1.1</b> Time Left, Spent by Move Type</a></li>
+<li class="chapter" data-level="5.1.1" data-path="results.html"><a href="results.html#time-amd-time-spent-by-move-type"><i class="fa fa-check"></i><b>5.1.1</b> Time amd Time Spent by Move Type</a></li>
 <li class="chapter" data-level="5.1.2" data-path="results.html"><a href="results.html#time-ratio-by-move"><i class="fa fa-check"></i><b>5.1.2</b> Time ratio by Move</a></li>
+<li class="chapter" data-level="5.1.3" data-path="results.html"><a href="results.html#quality-of-move-during-low-time"><i class="fa fa-check"></i><b>5.1.3</b> Quality of move during low time</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#investigating-how-the-games-ended"><i class="fa fa-check"></i><b>5.2</b> Investigating how the games ended</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="results.html"><a href="results.html#use-of-pieces-at-the-end-game"><i class="fa fa-check"></i><b>5.2.1</b> Use of pieces at the end game</a></li>
+<li class="chapter" data-level="5.2.2" data-path="results.html"><a href="results.html#time-left-and-time-ratio-when-the-losers-ran-out-of-time"><i class="fa fa-check"></i><b>5.2.2</b> Time left and time ratio when the losers ran out of time</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a></li>
@@ -140,7 +148,7 @@
 <h1><span class="header-section-number">Chapter 2</span> Data sources</h1>
 <div id="chess-game-notations" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Chess game notations</h2>
-<p>Chess positions can be stored in one of two formats: <strong>PGN</strong>s or <strong>FEN</strong>s. PGN (Portable Game Format) is often used when people write down moves from the start of the game. PGN can also include data such as event names, players, ELO, and results. FEN (Forsyth-Edwards Notation) is a simplified shorter notation that can describe one position. FEN has the disadvantage of not being able to encode data outside of chess position such as move order, player names, ELO, and results. In this project, we will be following chess games from the start of the game thus will be using the PGN format as the base format.</p>
+<p>Chess positions can be stored in one of two formats: <strong>PGN</strong>s or <strong>FEN</strong>s. PGN (Portable Game Format) is often used when people write down moves from the start of the game. PGN can also include data such as event names, players, ELO, and results. FEN (Forsyth-Edwards Notation) is a simplified shorter notation that can describe one position. FEN has the disadvantage of not being able to encode data outside of chess positions such as move order, player names, ELO, and results. In this project, we will be following chess games from the start of the game thus will be using the PGN format as the base format.</p>
 <p>The following encode the same chess game or chess position.</p>
 <div id="image-of-the-position" class="section level3" number="2.1.1">
 <h3><span class="header-section-number">2.1.1</span> Image of the position</h3>
@@ -185,9 +193,9 @@ For instance, CRAN Project <a href="https://cran.r-project.org/web/packages/rche
 <p><strong>lichess_db_standard_rated_2021-10.pgn</strong></p>
 <p>Total 88,092,721 games.</p>
 <p>The file can be downloaded from <a href="https://database.lichess.org/">database.lichess.org</a>.
-The file is a list of PGNs without index.
+The file is a list of PGNs without an index.
 All of the following data sets are results of organizing this data.
-Not all games from the database is guaranteed to have [%clk] or [%eval] which are the clock time and the evaluation of the position. According to the Lichess database, around 6% of the games are annotated with evaluation.
+Not all games from the database are guaranteed to have [%clk] or [%eval] which are the clock time and the evaluation of the position. According to the Lichess database, around 6% of the games are annotated with evaluation.
 The following is a sample PGN format Lichess uses.</p>
 <hr />
 <p>[Event “Rated Bullet game”]</p>
@@ -217,7 +225,7 @@ The following is a sample PGN format Lichess uses.</p>
 <p><strong>data_index.csv</strong> index from <strong>1 - 9</strong></p>
 <p>10,000,000 lines per csv. Total 88,092,721 lines.</p>
 <p>The data_index.csv was created to understand which data was missing in the original data.
-The columns of the data was constructed as following.</p>
+The columns of the data were constructed as follows.</p>
 <table>
 <colgroup>
 <col width="21%" />
@@ -268,7 +276,7 @@ The columns of the data was constructed as following.</p>
 </tr>
 <tr class="even">
 <td>Termination</td>
-<td>How the game ended (chr) ex) Normal(checkmate or resignation), Abandoned(player left the game), Time Forfeit (player ran out of time)</td>
+<td>How the game ended (chr) ex) Normal(checkmate or resignation), Abandoned(players left the game), Time Forfeit (players ran out of time)</td>
 </tr>
 <tr class="odd">
 <td>Evaluation</td>
@@ -282,7 +290,7 @@ The columns of the data was constructed as following.</p>
 <p><strong>moves_index.csv</strong> index from <strong>1 - 93</strong></p>
 <p>5,000,000 lines per csv. Total 464,436,334 lines.</p>
 <p>The moves_index.csv was created to format the data move by move.
-The columns of the data was constructed as following.</p>
+The columns of the data were constructed as follows.</p>
 <table>
 <colgroup>
 <col width="21%" />
@@ -317,7 +325,7 @@ The columns of the data was constructed as following.</p>
 </tr>
 <tr class="even">
 <td>Termination</td>
-<td>How the game ended (chr) ex) Normal(checkmate or resignation), Abandoned(player left the game), Time Forfeit (player ran out of time)</td>
+<td>How the game ended (chr) ex) Normal(checkmate or resignation), Abandoned(players left the game), Time Forfeit (players ran out of time)</td>
 </tr>
 <tr class="odd">
 <td>Color</td>
@@ -359,7 +367,7 @@ The columns of the data was constructed as following.</p>
 <p><strong>600+0_index.csv</strong> index from <strong>1 - 16</strong>
 5,000,000 lines per csv. Total 78,867,621 lines.</p>
 <p>The 600+0_index.csv was created to work with a manageable size of data.
-The columns of the data was identical to moves_index.csv.</p>
+The columns of the data were identical to moves_index.csv.</p>
 
 </div>
 </div>

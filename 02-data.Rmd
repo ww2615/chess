@@ -2,7 +2,7 @@
 
 ## Chess game notations
 
-Chess positions can be stored in one of two formats: **PGN**s or **FEN**s. PGN (Portable Game Format) is often used when people write down moves from the start of the game. PGN can also include data such as event names, players, ELO, and results. FEN (Forsyth-Edwards Notation) is a simplified shorter notation that can describe one position. FEN has the disadvantage of not being able to encode data outside of chess position such as move order, player names, ELO, and results. In this project, we will be following chess games from the start of the game thus will be using the PGN format as the base format.
+Chess positions can be stored in one of two formats: **PGN**s or **FEN**s. PGN (Portable Game Format) is often used when people write down moves from the start of the game. PGN can also include data such as event names, players, ELO, and results. FEN (Forsyth-Edwards Notation) is a simplified shorter notation that can describe one position. FEN has the disadvantage of not being able to encode data outside of chess positions such as move order, player names, ELO, and results. In this project, we will be following chess games from the start of the game thus will be using the PGN format as the base format.
 
 The following encode the same chess game or chess position.
 
@@ -56,9 +56,9 @@ We decided to use the data from [lichess database](https://database.lichess.org/
 Total 88,092,721 games.
 
 The file can be downloaded from [database.lichess.org](https://database.lichess.org/).
-The file is a list of PGNs without index.
+The file is a list of PGNs without an index.
 All of the following data sets are results of organizing this data.
-Not all games from the database is guaranteed to have [%clk] or [%eval] which are the clock time and the evaluation of the position. According to the Lichess database, around 6% of the games are annotated with evaluation. 
+Not all games from the database are guaranteed to have [%clk] or [%eval] which are the clock time and the evaluation of the position. According to the Lichess database, around 6% of the games are annotated with evaluation. 
 The following is a sample PGN format Lichess uses.
 
 ---
@@ -108,7 +108,7 @@ The following is a sample PGN format Lichess uses.
 10,000,000 lines per csv. Total 88,092,721 lines.
 
 The data_index.csv was created to understand which data was missing in the original data.
-The columns of the data was constructed as following.
+The columns of the data were constructed as follows.
 
 | Column Name | Description |
 | --- | ----------- |
@@ -121,7 +121,7 @@ The columns of the data was constructed as following.
 | BlackRatingDiff |Change in Black player's Elo after the game (num) |
 | ECO | Encyclopedia of Chess Openings. The Opening that was played in the game (chr) ex) B50 |
 | TimeControl | The time format in which the game was played. (chr) ex) 10 minutes + 5 second increment = "600+5" |
-| Termination | How the game ended (chr) ex) Normal(checkmate or resignation), Abandoned(player left the game), Time Forfeit (player ran out of time) |
+| Termination | How the game ended (chr) ex) Normal(checkmate or resignation), Abandoned(players left the game), Time Forfeit (players ran out of time) |
 | Evaluation | Whether or not the game was annotated (chr) ex) Yes, No |
 
 ## Moves Data
@@ -131,7 +131,7 @@ The columns of the data was constructed as following.
 5,000,000 lines per csv. Total 464,436,334 lines.
 
 The moves_index.csv was created to format the data move by move.
-The columns of the data was constructed as following.
+The columns of the data were constructed as follows.
 
 | Column Name | Description |
 | --- | ----------- |
@@ -140,7 +140,7 @@ The columns of the data was constructed as following.
 | BlackElo | Black player's Elo in Lichess (num)|
 | ECO | Encyclopedia of Chess Openings. The Opening that was played in the game (chr) ex) B50 |
 | TimeControl | The time format in which the game was played. (chr) ex) 10 minutes + 5 second increment = "600+5" |
-| Termination | How the game ended (chr) ex) Normal(checkmate or resignation), Abandoned(player left the game), Time Forfeit (player ran out of time) |
+| Termination | How the game ended (chr) ex) Normal(checkmate or resignation), Abandoned(players left the game), Time Forfeit (players ran out of time) |
 | Color | The color of the player that made the move (chr) ex) w or b |
 | MoveNum | The number of the move (num) |
 | Move | The algebraic notation of the move made (chr) ex) Qh4 |
@@ -156,4 +156,4 @@ The columns of the data was constructed as following.
 5,000,000 lines per csv. Total 78,867,621 lines.
 
 The 600+0_index.csv was created to work with a manageable size of data.
-The columns of the data was identical to moves_index.csv.
+The columns of the data were identical to moves_index.csv.
