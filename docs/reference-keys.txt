@@ -36,3 +36,5 @@ use-of-pieces-at-the-end-game
 time-left-and-time-ratio-when-the-losers-ran-out-of-time
 interactive-component
 conclusion
+limitations
+future-directions

@@ -24,7 +24,7 @@
 <meta name="author" content="Ju Hyun Jeon Freddy Wong" />
 
 
-<meta name="date" content="2021-12-10" />
+<meta name="date" content="2021-12-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -124,7 +124,11 @@
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a></li>
-<li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a></li>
+<li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="conclusion.html"><a href="conclusion.html#limitations"><i class="fa fa-check"></i><b>7.1</b> Limitations</a></li>
+<li class="chapter" data-level="7.2" data-path="conclusion.html"><a href="conclusion.html#future-directions"><i class="fa fa-check"></i><b>7.2</b> Future directions</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -146,7 +150,29 @@
             <section class="normal" id="section-">
 <div id="conclusion" class="section level1" number="7">
 <h1><span class="header-section-number">Chapter 7</span> Conclusion</h1>
+<div id="limitations" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> Limitations</h2>
+<p>There were several limits to our analysis.</p>
+<ol style="list-style-type: decimal">
+<li>The analysis was done exclusively on 600 + 0 Time Format.</li>
+</ol>
+<p>From the previous section, we have discussed that this format is the most played time format on lichess.org and the elo of players were representative of the whole data set. However, it is still <strong>17%</strong> of the total games. There are other forms of chess games such as hyper bullet (less than 1 minute), bullet (1 - 3 minute), blitz(less than 10 minutes), rapid chess(10 - 60 minutes), and normal(90 minutes). Analysis of these different categorizations of chess could have yielded interesting insights.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>The data set was gathered over a brief period.</li>
+</ol>
+<p>The data set was exclusively collected in October 2021. Considering the history of chess, the gameplay and strategies in chess do not change in a month. However, using the data from a longer period would have represented the gameplay in lichess.org better.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>The data set was exclusively from lichess.org.</li>
+</ol>
+<p>For online chess, there are other well-established platforms such as chess.com or chess24. Depending on the platform, there will be differences between player gameplay. However, chess24 and chess.com do not have API systems that would allow access to gameplay data.</p>
+<p>Limitations 1 and 2 were due to the technical limits of working on our computers. Without any form of database, it was hard to generate and share data between teammates that were easily over 10 GB.</p>
+</div>
+<div id="future-directions" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> Future directions</h2>
+<p>The lichess database contains PGNs from 2013. Although there is a low chance that all the games are annotated, it would be interesting to conduct the study over the extensive amount of game data they own. Comparisons between the time controls would also yield interesting results. Since lichess database provides player profiles, studying a player’s decision over time might also lead to fascinating insights. If players get to compare their strengths and weaknesses to the greater mass, they may have an easier time improving at chess and managing their time.</p>
+<p>The best way to conduct future studies would be using databases and data manipulation languages such as SQL. Lichess.org is a nonprofit website running on donations and as a result, they don’t store all of their games in a database. It would have been convenient if lichess.org provided APIs like tweepy. In multiple stages of our data transformation, using databases could have significantly improved the organization and manipulation of data. Filtering and mutating data would take far less effort.</p>
 
+</div>
 </div>
             </section>
 
