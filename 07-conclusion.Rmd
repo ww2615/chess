@@ -2,6 +2,14 @@
 
 ## Results
 
+We have concluded that there are significant differences in the relationship between the quality of moves and time.
+Three different definitions of time was tested through out the analysis: Time (Time Left), Time Spent, and Time ratio.
+People mostly had less time left after mistakes and blunders. Most importantly, people spent most time before they made a mistake or blunder. People thought for around 8 seconds before they blundered compared to normal moves made under 5 seconds in average.
+
+Time ratio also displayed that dubious moves, mistakes and blunders in most case had lower time ratio than normal moves. This suggests that blunders and mistakes are results of miscalculations.
+
+Further analysis suggests that pawn and bishop moves in short time are the safe approach.
+
 ## Limitations
 
 There were several limits to our analysis.
@@ -22,6 +30,6 @@ Limitations 1 and 2 were due to the technical limits of working on our computers
 
 ## Future directions
 
-The lichess database contains PGNs from 2013. Although there is a low chance that all the games are annotated, it would be interesting to conduct the study over the extensive amount of game data they own. Comparisons between the time controls would also yield interesting results. Since lichess database provides player profiles, studying a player's decision over time might also lead to fascinating insights. If players get to compare their strengths and weaknesses to the greater mass, they may have an easier time improving at chess and managing their time.
+The lichess database contains PGNs from 2013. Although there is a low chance that all the games are annotated, it would be interesting to conduct the study over the **extensive amount** of game data they own. Comparisons between the time controls would also yield interesting results. Since lichess database provides player profiles, studying **a single player's decision over time** might also lead to fascinating insights. If players get to compare their strengths and weaknesses to the greater mass, they may have an easier time improving at chess and managing their time.
 
-The best way to conduct future studies would be using databases and data manipulation languages such as SQL. Lichess.org is a nonprofit website running on donations and as a result, they don't store all of their games in a database. It would have been convenient if lichess.org provided APIs like tweepy. In multiple stages of our data transformation, using databases could have significantly improved the organization and manipulation of data. Filtering and mutating data would take far less effort.
+The best way to conduct future studies would be using **databases and data manipulation languages** such as SQL. Lichess.org is a nonprofit website running on donations and as a result, they don't store all of their games in a database. It would have been convenient if lichess.org provided APIs like tweepy. In multiple stages of our data transformation, using databases could have significantly improved the organization and manipulation of data. Filtering and mutating data would take far less effort.

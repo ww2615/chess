@@ -10,7 +10,7 @@ The following encode the same chess game or chess position.
 
 ![Sample Position](images/sample.PNG)
 
-### - Sample PGN
+### Sample PGN
 
 [Event "EDAV chess tournament"]
 
@@ -28,7 +28,7 @@ The following encode the same chess game or chess position.
 
 1. e4 1...e5 2.Nf3 2...Nc6 1-0
 
-### - Sample FEN
+### Sample FEN
 
 r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3
 
