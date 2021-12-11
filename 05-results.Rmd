@@ -6,9 +6,9 @@ How does time and the quality of moves correlate?
 
 We can first start by considering the simple case.
 
-### Time Left, Spent by Move Type
+### Time amd Time Spent by Move Type
 
-The distribution of **Time Left** and **Time Spent** by the type of moves people make.
+The distribution of **Time** and **Time Spent** by the type of moves people make.
 
 ![](images/Result1.PNG)
 ![](images/Result2.PNG)
@@ -45,7 +45,7 @@ The distribution of **Time Left** and **Time Spent** by the type of moves people
 # ggplot(df2, aes(x = fct_relevel(Type, "blunder", "mistake", "normal", "dubious"), y = Time, weight = n)) + 
 #   geom_boxplot() + 
 #   xlab("Type") + 
-#   ylab("Time Left") +
+#   ylab("Time") +
 #   ylim(450, 600)
 # ggplot(data = df2, aes(x = Time, weight = n, color = fct_relevel(Type, "normal", "dubious", "mistake", "blunder"))) + 
 #   geom_density(size = 3) +
@@ -67,14 +67,14 @@ The distribution of **Time Left** and **Time Spent** by the type of moves people
 #game2<-game%>%filter(Timet>=0&Timet<=120)
 #plot1<-ggplot(data = game1, aes(x = Timet, color = fct_relevel(Type, "normal", "dubious", "mistake", "blunder"))) + 
 #   geom_density(size = 1) +
-#   xlab("Time Left") +
+#   xlab("Time") +
 #   labs(color = "legend")+
 #  geom_vline(xintercept = 300)+
 #  scale_x_continuous(breaks = seq(240, 360, by = 30))+
 #  ggtitle("From 6 mins to 4 mins left")
 #plot2<-ggplot(data = game2, aes(x = Timet, color = fct_relevel(Type, "normal", "dubious", "mistake", "blunder"))) + 
 #   geom_density(size = 1) +
-#   xlab("Time Left") +
+#   xlab("Time") +
 #   labs(color = "legend")+
 #  geom_vline(xintercept = 60)+
 #  geom_vline(xintercept = 10)+
@@ -85,7 +85,9 @@ The distribution of **Time Left** and **Time Spent** by the type of moves people
 
 This graph provides a very unique insight to the correlation.
 
-For **Time Left**:
+#### Time 
+
+For **Time**:
 
 1. **Normal** moves have the biggest std as expected. 
 
@@ -105,6 +107,8 @@ For **Time Left**:
    - For both fluctuations at 5mins and 1min, we can see the curves for **normal** moves peak earlier than the other type of moves and the other moves almost peaked at the same time. However, **dubious** moves happened the most when there are 5 minutes left while **mistake** moves happened the most when there is only 1 minute left.
    
    - When the time left is less than 10 seconds, the distribution of the moves changed. **Normal** moves are made the most.
+
+#### Time Spent
    
 For **Time Spent**:
 
@@ -126,7 +130,7 @@ This is a heatmap of Time Left - Time Spent per type of move.
 ```{r}
 # ggplot(df2, aes(x = Time, y = TimeSpent)) + 
 #   stat_density_2d(aes(fill = ..density..), geom = "raster", contour = FALSE) + 
-#   xlab("Time Left") +
+#   xlab("Time") +
 #   ylab("Time Spent") +
 #   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
 #         panel.background = element_blank(), axis.line = element_line(colour = "black"), strip.background = element_blank()) +
@@ -138,7 +142,7 @@ It becomes evident that people play **bad** moves **early** in the game
 
 ### Time ratio by Move
 
-Let's define **ratio = Time Spent / Time Left**.
+Let's define **ratio = Time Spent / Time**.
 
 This concept of **ratio** is helpful in the sense that the person could have spent more time considering the position.
 
@@ -156,7 +160,7 @@ tb <- read.csv("data/tb.csv")
 tb
 # ggplot(df2, aes(x = Time, y = ratio, weight = n)) + 
 #   stat_density_2d(aes(fill = ..density..), geom = "raster", contour = FALSE) + 
-#   xlab("Time Left") + 
+#   xlab("Time") + 
 #   ylab("Time Spent / Time") + 
 #   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
 #         panel.background = element_blank(), axis.line = element_line(colour = "black"), strip.background = element_blank()) +
@@ -188,7 +192,7 @@ The result of this section would give insight to players that what piece would h
 #gametemp<-gametemp%>%filter(Move!="Move")%>%mutate(Eval=as.numeric(Eval),EvalDiff=as.numeric(EvalDiff))%>%
     #na.omit()
 #gametemp%>%select(EvalDiff,Eval)%>%summary()
-summary<-read.csv("~/Desktop/chessgame_analysis/data/qualitysummary.csv")
+summary<-read.csv("data/qualitysummary.csv")
 summary
 ```
 ![](images/00003e.PNG)
