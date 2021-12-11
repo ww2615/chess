@@ -88,8 +88,8 @@
 <li class="chapter" data-level="2.1" data-path="data-sources.html"><a href="data-sources.html#chess-game-notations"><i class="fa fa-check"></i><b>2.1</b> Chess game notations</a>
 <ul>
 <li class="chapter" data-level="2.1.1" data-path="data-sources.html"><a href="data-sources.html#image-of-the-position"><i class="fa fa-check"></i><b>2.1.1</b> Image of the position</a></li>
-<li class="chapter" data-level="2.1.2" data-path="data-sources.html"><a href="data-sources.html#sample-pgn"><i class="fa fa-check"></i><b>2.1.2</b> - Sample PGN</a></li>
-<li class="chapter" data-level="2.1.3" data-path="data-sources.html"><a href="data-sources.html#sample-fen"><i class="fa fa-check"></i><b>2.1.3</b> - Sample FEN</a></li>
+<li class="chapter" data-level="2.1.2" data-path="data-sources.html"><a href="data-sources.html#sample-pgn"><i class="fa fa-check"></i><b>2.1.2</b> Sample PGN</a></li>
+<li class="chapter" data-level="2.1.3" data-path="data-sources.html"><a href="data-sources.html#sample-fen"><i class="fa fa-check"></i><b>2.1.3</b> Sample FEN</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="data-sources.html"><a href="data-sources.html#choosing-the-right-data"><i class="fa fa-check"></i><b>2.2</b> Choosing the right data</a></li>
 <li class="chapter" data-level="2.3" data-path="data-sources.html"><a href="data-sources.html#lichess-game-data-format"><i class="fa fa-check"></i><b>2.3</b> Lichess Game Data Format</a></li>
@@ -157,7 +157,7 @@
 <p>We can first start by considering the simple case.</p>
 <div id="time-amd-time-spent-by-move-type" class="section level3" number="5.1.1">
 <h3><span class="header-section-number">5.1.1</span> Time amd Time Spent by Move Type</h3>
-<p>The distribution of <strong>Time</strong> and <strong>Time Spent</strong> by the type of moves people make.</p>
+<p>The following distributions relate <strong>Time</strong> and <strong>Time Spent</strong> to the types of move people make.</p>
 <p><img src="images/Result1.PNG" />
 <img src="images/Result2.PNG" />
 <img src="images/Result3.PNG" />
@@ -167,48 +167,48 @@
 <h4><span class="header-section-number">5.1.1.1</span> Time</h4>
 <p>For <strong>Time</strong>:</p>
 <ol style="list-style-type: decimal">
-<li><p><strong>Normal</strong> moves have the biggest std as expected.</p></li>
-<li><p>People have less <strong>Time Left</strong> after they make a <strong>blunder</strong> or <strong>mistake</strong></p></li>
-<li><p><strong>Dubious</strong> moves are mostly made in the first 40 second of the game.</p>
+<li><p><strong>Normal</strong> moves had the biggest std as expected.</p></li>
+<li><p>People had less <strong>Time</strong> after they made a <strong>blunder</strong> or <strong>mistake</strong></p></li>
+<li><p><strong>Dubious</strong> moves were mostly made in the first 40 second of the game.</p>
 <ul>
 <li>This may imply that <strong>dubious moves</strong> are part of the opening.</li>
 </ul></li>
-<li><p>When the time left reaches <strong>5 minutes</strong> and <strong>1 minutes</strong>, sudden fluctuations were found for the count of moves</p></li>
+<li><p>When the time left reached <strong>5 minutes</strong> and <strong>1 minutes</strong>, sudden fluctuations were found for the count of moves</p></li>
 </ol>
 <p><img src="images/000063.png" />
 <img src="images/000061.png" /></p>
 <ul>
 <li><p>It is believed that <strong>10 seconds</strong>, <strong>1 minute</strong> and <strong>5 minutes</strong> acted as a psychological catalyst that urged players to make a move</p></li>
 <li><p>For both fluctuations at 5mins and 1min, we can see the curves for <strong>normal</strong> moves peak earlier than the other type of moves and the other moves almost peaked at the same time. However, <strong>dubious</strong> moves happened the most when there are 5 minutes left while <strong>mistake</strong> moves happened the most when there is only 1 minute left.</p></li>
-<li><p>When the time left is less than 10 seconds, the distribution of the moves changed. <strong>Normal</strong> moves are made the most.</p></li>
+<li><p>When the time left was less than 10 seconds, the distribution of the moves changed. <strong>Normal</strong> moves were made the most.</p></li>
 </ul>
 </div>
 <div id="time-spent" class="section level4" number="5.1.1.2">
 <h4><span class="header-section-number">5.1.1.2</span> Time Spent</h4>
 <p>For <strong>Time Spent</strong>:</p>
 <ol style="list-style-type: decimal">
-<li><p><strong>Normal</strong> moves are made fast.</p>
+<li><p><strong>Normal</strong> moves were made fast.</p>
 <ul>
 <li><p><strong>Normal</strong> moves may be obvious given the position</p></li>
 <li><p><strong>Normal</strong> moves may be automatically played during the opening.</p></li>
 </ul></li>
-<li><p><strong>Blunder</strong> takes more average time than any other type of move.</p>
+<li><p><strong>Blunder</strong> took more average time than any other type of move.</p>
 <ul>
-<li>This is less obvious. We think blunders are made <strong>fast without thought</strong>.</li>
+<li>This was less obvious. We expected blunders to be made <strong>fast without thought</strong>.</li>
 </ul></li>
-<li><p><strong>Mistakes</strong> also take more time than <strong>normal</strong> moves.</p></li>
+<li><p><strong>Mistakes</strong> also took more time than the average <strong>normal</strong> moves.</p></li>
 </ol>
-<p>This is a heatmap of Time Left - Time Spent per type of move.</p>
+<p>This is a heatmap of Time - Time Spent per type of move.</p>
 <p><img src="images/Result5.PNG" /></p>
-<p>It becomes evident that people play <strong>bad</strong> moves <strong>early</strong> in the game</p>
+<p>It became evident that people play <strong>bad</strong> moves <strong>early</strong> in the game</p>
 </div>
 </div>
 <div id="time-ratio-by-move" class="section level3" number="5.1.2">
 <h3><span class="header-section-number">5.1.2</span> Time ratio by Move</h3>
-<p>Let’s define <strong>ratio = Time Spent / Time</strong>.</p>
-<p>This concept of <strong>ratio</strong> is helpful in the sense that the person could have spent more time considering the position.</p>
-<p>For instance, given <strong>1 second</strong> of time left and the player makes a move in <strong>1 second</strong>, then there is less possibility that the player would have detected a better move.</p>
-<p>However, given <strong>60 second</strong> of time left and the player makes a move in <strong>1 second</strong> and <strong>blunder</strong>, this is a bad decision and probably the player should have thought more before they made the move.</p>
+<p>We defined <strong>ratio = Time Spent / Time</strong>.</p>
+<p>This concept of <strong>ratio</strong> reflects the relative sense of time and helped us to understand whether the player could have spent more time considering the position.</p>
+<p>For instance, with <strong>1 second</strong> of time left, the player made a move in <strong>1 second</strong>. Then there is less possibility that the player would have found a better move.</p>
+<p>However, with <strong>60 second</strong> on the clock, the player made a move in <strong>1 second</strong> and <strong>blundered</strong>. This is a terrible decision and the player should have spent more time thinking before they made the move.</p>
 <pre><code>##   X    Type      mean       std
 ## 1 1 dubious 0.1424937 0.1303141
 ## 2 2 mistake 0.1668489 0.1409064
@@ -217,12 +217,15 @@
 <p><img src="images/Result6.PNG" /></p>
 <p>From this graph,</p>
 <ol style="list-style-type: decimal">
-<li><p>The mean of <strong>normal</strong> moves are much higher than other moves.</p>
+<li><p>The mean of <strong>normal</strong> moves were much higher than other moves.</p>
 <ul>
 <li><strong>Normal</strong> moves are a result of higher ratio of Time Spent / Time.</li>
 </ul></li>
-<li><p><strong>Dubious</strong> moves are most likely intended or result of bad understanding early on in the game.</p></li>
-<li><p><strong>Mistakes</strong> and <strong>blunders</strong> are also a result of not enough thinking.</p>
+<li><p><strong>Dubious</strong> moves were most likely intended or a result of bad understanding early on in the game.</p>
+<ul>
+<li>This is consistent to the idea of <strong>Dubious</strong> moves happening in the early stages of the game.</li>
+</ul></li>
+<li><p><strong>Mistakes</strong> and <strong>blunders</strong> were also a result of not spending enough time.</p>
 <ul>
 <li>Players could have spent <strong>much more time</strong> thinking about the position and not blundering.</li>
 </ul></li>
