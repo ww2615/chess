@@ -39,3 +39,6 @@ conclusion
 results-1
 limitations
 future-directions
+a-parallel-coordinates-chart-for-the-last-move-of-each-game
+parallel-coordinates-chart-for-the-last-move-of-each-game
+scatter-plot-for-low-time-ratio-vs-evaluation

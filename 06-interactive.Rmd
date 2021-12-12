@@ -1,3 +1,86 @@
 # Interactive component
 
+## Parallel coordinates chart for the last move of each game
+```{r}
+library(parcoords)
+library(MASS)
+library(plotly)
+load("data/interactdata.RData")
+a[,1:7]%>%
+  parcoords(rownames=FALSE,brushMode="1D-axes-multi",reorderable = TRUE,alpha=0.1,color = list(colorBy="Piece"),withD3 = T)
+```
 
+## Scatter plot for low time ratio vs evaluation
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v6.js"></script>
+
+<!-- Initialize a select button -->
+<select id="selectButton"></select>
+        
+<!-- Create a div where the graph will take place -->
+<div id="plot2"></div>
+
+<script>
+
+// set the dimensions and margins of the graph
+const margin = {top: 10, right: 100, bottom: 30, left: 30},
+    width = 460 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+const svg = d3.select("#plot2")
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",`translate(${margin.left},${margin.top})`);
+
+//Read the data
+d3.csv("https://raw.githubusercontent.com/ww2615/data/main/scatter3.csv").then(function(data) {
+
+    const allGroup = ["eva","evadiff"]
+    d3.select("#selectButton")
+      .selectAll('myOptions')
+     	.data(allGroup)
+      .enter()
+    	.append('option')
+      .text(d => d) 
+      .attr("value", d => d) 
+
+    const x = d3.scaleLinear()
+      .domain([0.0016,0.0025])
+      .range([ 0, width+100 ]);
+    svg.append("g")
+      .call(d3.axisBottom(x));
+    var y = d3.scaleLinear()
+      .domain( [-60,60])
+      .range([ height, 0 ]);
+    svg.append("g")
+      .call(d3.axisLeft(y));
+    const dot = svg
+      .selectAll('circle')
+      .data(data)
+      .join('circle')
+        .attr("cx", d => x(+d.Timeratio))
+        .attr("cy", d => y(+d.eva))
+        .attr("r", 1.2)
+        .style("fill", "#6495ed")
+    function update(selectedGroup) {
+      const dataFilter = data.map(function(d){return {Timeratio: d.Timeratio, value:d[selectedGroup]} })
+      dot
+        .data(dataFilter)
+        .transition()
+        .duration(500)
+          .attr("cx", d => x(+d.Timeratio))
+          .attr("cy", d => y(+d.value))
+    }
+    d3.select("#selectButton").on("change", function(event, d) {
+        // recover the option that has been chosen
+        let selectedOption = d3.select(this).property("value")
+        // run the updateChart function with this selected option
+        update(selectedOption)
+    })
+
+})
+</script>
