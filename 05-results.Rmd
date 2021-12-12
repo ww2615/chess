@@ -6,7 +6,7 @@ How does time and the quality of moves correlate?
 
 We can first start by considering the simple case.
 
-### Time amd Time Spent by Move Type
+### Time and Time Spent by Move Type
 
 The following distributions relate **Time** and **Time Spent** to the types of move people make.
 
@@ -203,25 +203,25 @@ To represent low time with **Time ratio**, a specific range was chosen [0,0.0025
 
 ![](images/000074.PNG)
 
-1. Within the time ratio of 0.0025, it is found that Evaluation difference increases as the time ratio decrease further for most pieces except rook. Which means the advantage of moving a piece in a lower time ratio would be better. 
+1. Within the time ratio of 0.0025, it was found that Evaluation difference increases as the time ratio decreased further for most pieces except rook. Which means the advantage of moving a piece in a lower time ratio would be better. 
 
-2. Comparing the six pieces, **Pawn** has the highest odds of being a high quality move, followed by **Bishop** and **Knight**
+2. Comparing the six pieces, **Pawn** had the highest odds of being a high quality move, followed by **Bishop** and **Knight**
 
 3. Thus, when the player has to make a quick decision with very less time left, **Pawn** and **Bishop** should take piority. 
 
-4. However, it is noticed that when time ratio decreases to 0.00165, the evaluation difference almost reduced to zero. Thus, it is not recommended to make a move with a very low **Time ratio**. 
+4. However, it was noticed that when time ratio decreases to 0.00165, the evaluation difference almost reduced to zero. Thus, it is not recommended to make a move with a very low **Time ratio**. 
 
 #### Quality of moves by piece when remaining time is low
 ![](images/000089.PNG)
 
-1. Taking the perspective of Time left, it is different from the Time ratio graph. There is no significant increase in EvalDiff as the time left is reducing from 60 seconds. However, we could still find out moving which piece would yeild the highest possibility of a better evaluation. 
+1. Taking the perspective of Time left, it was different from the Time ratio graph. There was no significant increases in EvalDiff as the time left was reducing from 60 seconds. However, we could still find out moving which piece would yeild the highest possibility of a better evaluation. 
 
-2. **King** has the highest Evaluation, followed by **Rook** and **Pawn**. **Bishop** and **Knight** should be avoided to be used when remaining time is low as they have the lowest Evaluation difference. 
+2. **King** had the highest Evaluation, followed by **Rook** and **Pawn**. **Bishop** and **Knight** should be avoided to be used when remaining time is low as they have the lowest Evaluation difference. 
 
 #### Quality of moves by piece when time spent is low
 ![](images/00008b.PNG)
 
-1. It is found that the lowest time spent on a move would be around 0.6 seconds. Again, unlike the time ratio graph, the span of Evaluation difference stays the same . However, in contrast to the previous graph, **Pawn** is statistically the best pick for move if the player wants to make a quick response, followed by **King**. **Queen** should be avoid to use when a quick response is needed as the Evaluation difference is the smallest. 
+1. It was found that the lowest time spent on a move would be around 0.6 seconds. Again, unlike the time ratio graph, the span of Evaluation difference stays the same . However, in contrast to the previous graph, **Pawn** is statistically the best pick for move if the player wants to make a quick response, followed by **King**. **Queen** should be avoid to use when a quick response is needed as the Evaluation difference is the smallest. 
 
 ```{r}
 #game<- read.csv("~/Desktop/project test/ChessData/game.csv")
@@ -304,9 +304,9 @@ From this graph,
 
 1. Most **Time ratio** lies between 0.1 and 0.01 when it is the last move. 
 
-2. We can see the most densed area of graph happens when time left is less than 25 and time spent is less than 1.25. That shows when it comes to the last move, the time left is no more than 25 seconds and the time spent is no more than 1.25 seconds. 
+2. We could see the most densed area of graph happens when time left is less than 25 and time spent is less than 1.25. That shows when it comes to the last move, the time left is no more than 25 seconds and the time spent is no more than 1.25 seconds. 
 
-3. Moreover, there is another peak occurs when remaining time is around 225 seconds. That tells a large number of games ended during that amount of **Time left**
+3. Moreover, another peak occured when remaining time was around 225 seconds. That tells a large number of games ended during that amount of **Time left**
 
 4. Another way to see it, majority of the games end around Time ratio = **0.1** and **0.01**
 
@@ -350,7 +350,7 @@ Please note that **Time ratio** is scaled-up from **0 to 1** to **0 to 100%**:
 
 2. Considering **time forfeit** games only, **time ratio** of the winner are mostly below 10% while the density plot shows it concentrated at **Time ratio** = 0.02 and **Move Number** = 30.
 
-3. Also, we can observe that there are less outliers for **time ratio** when the move number is very high. It is believed that games that have a hugh amount of moves would result in smaller time ratio as there is not much time left. 
+3. Also, we could observe that there are less outliers for **time ratio** when the move number is very high. It was believed that games that have a hugh amount of moves would result in smaller time ratio as there is not much time left. 
 
 
 
