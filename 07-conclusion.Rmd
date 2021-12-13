@@ -8,7 +8,9 @@ People mostly had less time left after mistakes and blunders. Most importantly, 
 
 Time ratio also displayed that dubious moves, mistakes and blunders in most case had lower time ratio than normal moves. This suggests that blunders and mistakes are results of miscalculations.
 
-Further analysis suggests that pawn and bishop moves in short time are the safe approach.
+Further analysis on the quality of move during low time suggests that pawn and bishop moves are the safer approach when there is not much time left and the player has to response quickly, which is low **time ratio**. However, if considering **time left** and **time spent** separately, the safer approach would be different. **King** is the safest approach when remaining time is low and **Pawn** would be the best choice if the move has to made quickly. 
+
+Lastly, we have investigated how the games ended. The majority of games ended with no more than 30 moves while normal games tended to end in fewer number of moves compared to games that ended because of someone ran out of time. Moreover, we found out that most games end with a time ratio between 0.1 and 0.01. 
 
 ## Limitations
 
