@@ -24,7 +24,7 @@
 <meta name="author" content="Ju Hyun Jeon Freddy Wong" />
 
 
-<meta name="date" content="2021-12-11" />
+<meta name="date" content="2021-12-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -113,7 +113,7 @@
 <ul>
 <li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#time-and-moves"><i class="fa fa-check"></i><b>5.1</b> Time and Moves</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="results.html"><a href="results.html#time-amd-time-spent-by-move-type"><i class="fa fa-check"></i><b>5.1.1</b> Time amd Time Spent by Move Type</a></li>
+<li class="chapter" data-level="5.1.1" data-path="results.html"><a href="results.html#time-and-time-spent-by-move-type"><i class="fa fa-check"></i><b>5.1.1</b> Time and Time Spent by Move Type</a></li>
 <li class="chapter" data-level="5.1.2" data-path="results.html"><a href="results.html#time-ratio-by-move"><i class="fa fa-check"></i><b>5.1.2</b> Time ratio by Move</a></li>
 <li class="chapter" data-level="5.1.3" data-path="results.html"><a href="results.html#quality-of-move-during-low-time"><i class="fa fa-check"></i><b>5.1.3</b> Quality of move during low time</a></li>
 </ul></li>
@@ -123,7 +123,11 @@
 <li class="chapter" data-level="5.2.2" data-path="results.html"><a href="results.html#time-left-and-time-ratio-when-the-losers-ran-out-of-time"><i class="fa fa-check"></i><b>5.2.2</b> Time left and time ratio when the losers ran out of time</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a></li>
+<li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="interactive-component.html"><a href="interactive-component.html#parallel-coordinates-chart-for-the-last-move-of-each-game"><i class="fa fa-check"></i><b>6.1</b> Parallel coordinates chart for the last move of each game</a></li>
+<li class="chapter" data-level="6.2" data-path="interactive-component.html"><a href="interactive-component.html#scatter-plot-for-low-time-ratio-vs-evaluation"><i class="fa fa-check"></i><b>6.2</b> Scatter plot for low time ratio vs evaluation</a></li>
+</ul></li>
 <li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a>
 <ul>
 <li class="chapter" data-level="7.1" data-path="conclusion.html"><a href="conclusion.html#results-1"><i class="fa fa-check"></i><b>7.1</b> Results</a></li>
@@ -157,7 +161,8 @@
 Three different definitions of time was tested through out the analysis: Time (Time Left), Time Spent, and Time ratio.
 People mostly had less time left after mistakes and blunders. Most importantly, people spent most time before they made a mistake or blunder. People thought for around 8 seconds before they blundered compared to normal moves made under 5 seconds in average.</p>
 <p>Time ratio also displayed that dubious moves, mistakes and blunders in most case had lower time ratio than normal moves. This suggests that blunders and mistakes are results of miscalculations.</p>
-<p>Further analysis suggests that pawn and bishop moves in short time are the safe approach.</p>
+<p>Further analysis on the quality of move during low time suggests that pawn and bishop moves are the safer approach when there is not much time left and the player has to response quickly, which is low <strong>time ratio</strong>. However, if considering <strong>time left</strong> and <strong>time spent</strong> separately, the safer approach would be different. <strong>King</strong> is the safest approach when remaining time is low and <strong>Pawn</strong> would be the best choice if the move has to made quickly.</p>
+<p>Lastly, we have investigated how the games ended. The majority of games ended with no more than 30 moves while normal games tended to end in fewer number of moves compared to games that ended because of someone ran out of time. Moreover, we found out that most games end with a time ratio between 0.1 and 0.01.</p>
 </div>
 <div id="limitations" class="section level2" number="7.2">
 <h2><span class="header-section-number">7.2</span> Limitations</h2>
